@@ -1101,7 +1101,7 @@ html[data-theme="dark"] .acuto-theme-toggle .acuto-icon--moon {
 }
 
 .acuto-home__feature .acuto-hero__index {
-	bottom: 1.25rem;
+	bottom: 2.5rem;
 	font-size: clamp(3rem, 7.5vw, 6.5rem);
 }
 
