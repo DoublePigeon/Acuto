@@ -485,6 +485,30 @@
 	var toc = qs('[data-acuto-toc]');
 	var tocItems = [];
 	var ticking = false;
+	var headerCollapsed = false;
+	var headerCollapseAt = 160;
+	var headerExpandAt = 96;
+
+	/*
+	 * Two thresholds instead of one: collapsing the top bar changes the height
+	 * of a sticky element that is still in flow, so a single threshold gets
+	 * crossed again by the resulting layout shift and the header flickers.
+	 */
+	function syncHeader() {
+		if (!header) {
+			return;
+		}
+
+		var offset = window.scrollY || window.pageYOffset || 0;
+
+		if (!headerCollapsed && offset > headerCollapseAt) {
+			headerCollapsed = true;
+			header.classList.add('is-stuck');
+		} else if (headerCollapsed && offset < headerExpandAt) {
+			headerCollapsed = false;
+			header.classList.remove('is-stuck');
+		}
+	}
 
 	function updateProgress() {
 		if (!progressBar || !article) {
@@ -531,9 +555,7 @@
 
 		ticking = true;
 		window.requestAnimationFrame(function () {
-			if (header) {
-				header.classList.toggle('is-stuck', window.scrollY > 80);
-			}
+			syncHeader();
 
 			updateProgress();
 			updateActiveHeading();
