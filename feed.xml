@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>ACU-TO</title>
+		<link>https://doublepigeon.github.io/Acuto/</link>
+		<description>独立观察，深度分析</description>
+		<language>zh-CN</language>
+		<lastBuildDate>Wed, 21 Oct 2026 05:16:13 +0000</lastBuildDate>
+		<generator>ACU-TO Core</generator>
+		<atom:link href="https://doublepigeon.github.io/Acuto/feed.xml" rel="self" type="application/rss+xml" />
+		<item>
+			<title>如何让AI推荐我的产品</title>
+			<link>https://doublepigeon.github.io/Acuto/%e5%a6%82%e4%bd%95%e8%ae%a9ai%e6%8e%a8%e8%8d%90%e6%88%91%e7%9a%84%e4%ba%a7%e5%93%81/</link>
+			<guid isPermaLink="true">https://doublepigeon.github.io/Acuto/%e5%a6%82%e4%bd%95%e8%ae%a9ai%e6%8e%a8%e8%8d%90%e6%88%91%e7%9a%84%e4%ba%a7%e5%93%81/</guid>
+			<pubDate>Wed, 21 Oct 2026 05:15:22 +0000</pubDate>
+			<description>把AI的「推荐位」拆成三步：被检索到、被正确理解、被优先选择 一、场景：客户在AI里问了一句，名单上没有你 一个很典型的画面：潜在客户想找一家供应商，不再去搜索引擎翻十页链接，而是在对话框里打一行字——「做XX的哪家好，帮我推荐几家」。几秒钟后AI给出三到五个名字，附带一句一句的理由：谁规模大、谁交付稳、谁适合中小客户。 客户拿着这份名单去比价、去询盘。而你的销售团队从头到尾不知道发生过这件事：没有点击、没有关键词数据，连「被错过」都感知不到。这是AI渠道最容易被忽略的一点——看不见的流量流失。 二、为什么答案里总是竞品 竞品有比较型语料，你只有自我介绍。AI回答「哪家好」时最常引用横向对比、适用场景、优劣势这类内容。如果你的公开语料全是「我们很专业、服务很好」，AI没有可比较的抓手，自然很难把你排进去。 你的内容没有回答「选谁」这个问题。官网首页讲产品功能，公众号讲公司动态，但很少…</description>
+			<category>观点</category>
+		</item>
+	</channel>
+</rss>

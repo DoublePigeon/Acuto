@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+	<url>
+		<loc>https://doublepigeon.github.io/Acuto/</loc>
+		<lastmod>2026-10-21T05:16:12+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://doublepigeon.github.io/Acuto/privacy/</loc>
+		<lastmod>2026-10-21T04:05:45+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://doublepigeon.github.io/Acuto/contact/</loc>
+		<lastmod>2026-10-21T04:05:45+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://doublepigeon.github.io/Acuto/about/</loc>
+		<lastmod>2026-10-21T04:05:45+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://doublepigeon.github.io/Acuto/%e5%a6%82%e4%bd%95%e8%ae%a9ai%e6%8e%a8%e8%8d%90%e6%88%91%e7%9a%84%e4%ba%a7%e5%93%81/</loc>
+		<lastmod>2026-10-21T05:15:22+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://doublepigeon.github.io/Acuto/topic/opinion/</loc>
+		<lastmod>2026-10-21T05:16:12+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://doublepigeon.github.io/Acuto/author/doublepigeon/</loc>
+		<lastmod>2026-10-21T05:16:12+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.5</priority>
+	</url>
+</urlset>

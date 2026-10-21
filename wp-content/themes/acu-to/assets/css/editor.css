@@ -1,0 +1,270 @@
+@charset "UTF-8";
+
+/* Editor canvas: keep the writing experience close to the published article. */
+
+.editor-styles-wrapper {
+	background: var(--acuto-bg, #ffffff);
+	color: var(--acuto-ink-soft, #243b38);
+	font-family: var(--acuto-font-display, "Source Han Serif SC", "Noto Serif SC", "Songti SC", SimSun, Georgia, serif);
+	font-size: 1.08rem;
+	line-height: 1.9;
+}
+
+.editor-styles-wrapper .wp-block {
+	max-width: 760px;
+}
+
+.editor-styles-wrapper .wp-block[data-align="wide"] {
+	max-width: 1100px;
+}
+
+.editor-styles-wrapper .wp-block[data-align="full"] {
+	max-width: none;
+}
+
+.editor-styles-wrapper p {
+	margin-top: 0;
+	margin-bottom: 1.5em;
+	line-height: 1.9;
+}
+
+.editor-styles-wrapper a {
+	color: var(--acuto-teal, #0f766e);
+	text-decoration: underline;
+	text-underline-offset: 0.18em;
+}
+
+.editor-styles-wrapper strong {
+	color: var(--acuto-ink, #0b1f1d);
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+	font-family: var(--acuto-font-display, "Source Han Serif SC", "Noto Serif SC", "Songti SC", SimSun, Georgia, serif);
+	font-weight: 800;
+	letter-spacing: -0.015em;
+	line-height: 1.15;
+	color: var(--acuto-ink, #0b1f1d);
+}
+
+.editor-styles-wrapper h1 {
+	font-size: 2.8rem;
+	line-height: 1.05;
+}
+
+.editor-styles-wrapper h2 {
+	margin-top: 2.2em;
+	padding-top: 1.1em;
+	border-top: 1px solid var(--acuto-line, #d6e6e3);
+	font-size: 2rem;
+}
+
+.editor-styles-wrapper h3 {
+	margin-top: 1.9em;
+	font-size: 1.5rem;
+}
+
+.editor-styles-wrapper h4 {
+	font-size: 1.2rem;
+}
+
+.editor-styles-wrapper ul,
+.editor-styles-wrapper ol {
+	padding-left: 1.35em;
+}
+
+.editor-styles-wrapper li + li {
+	margin-top: 0.35em;
+}
+
+.editor-styles-wrapper li::marker {
+	color: var(--acuto-teal, #0f766e);
+}
+
+.editor-styles-wrapper blockquote {
+	margin: 2em 0;
+	padding: 0.2em 0 0.2em 1.4em;
+	border-left: 4px solid var(--acuto-teal, #0f766e);
+	color: var(--acuto-ink, #0b1f1d);
+	font-size: 1.25em;
+	line-height: 1.5;
+}
+
+.editor-styles-wrapper blockquote cite {
+	display: block;
+	margin-top: 0.8rem;
+	color: var(--acuto-muted, #5f7572);
+	font-family: var(--acuto-font-sans, system-ui, sans-serif);
+	font-size: 0.72rem;
+	font-style: normal;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.editor-styles-wrapper figure {
+	margin: 2em 0;
+}
+
+.editor-styles-wrapper figcaption {
+	padding-top: 0.6rem;
+	color: var(--acuto-muted, #5f7572);
+	font-family: var(--acuto-font-sans, system-ui, sans-serif);
+	font-size: 0.75rem;
+	line-height: 1.55;
+}
+
+.editor-styles-wrapper table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: var(--acuto-font-sans, system-ui, sans-serif);
+	font-size: 0.88rem;
+	line-height: 1.6;
+}
+
+.editor-styles-wrapper th {
+	padding: 0.75rem 0.85rem;
+	border-bottom: 2px solid var(--acuto-line-strong, #b8d4cf);
+	background: var(--acuto-bg-soft, #f2faf8);
+	color: var(--acuto-ink, #0b1f1d);
+	text-align: left;
+}
+
+.editor-styles-wrapper td {
+	padding: 0.75rem 0.85rem;
+	border-bottom: 1px solid var(--acuto-line, #d6e6e3);
+	vertical-align: top;
+}
+
+.editor-styles-wrapper code {
+	padding: 0.12em 0.35em;
+	border: 1px solid var(--acuto-line, #d6e6e3);
+	background: var(--acuto-bg-soft, #f2faf8);
+	font-family: var(--acuto-font-mono, monospace);
+	font-size: 0.86em;
+}
+
+.editor-styles-wrapper pre {
+	padding: 1.25rem;
+	overflow-x: auto;
+	background: var(--acuto-ink, #0b1f1d);
+	color: var(--acuto-bg, #ffffff);
+	font-family: var(--acuto-font-mono, monospace);
+	font-size: 0.82rem;
+	line-height: 1.65;
+}
+
+.editor-styles-wrapper pre code {
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: inherit;
+}
+
+.editor-styles-wrapper .is-style-lead {
+	color: var(--acuto-ink, #0b1f1d);
+	font-size: 1.24em;
+	line-height: 1.6;
+}
+
+.editor-styles-wrapper .is-style-eyebrow {
+	color: var(--acuto-teal, #0f766e);
+	font-family: var(--acuto-font-sans, system-ui, sans-serif);
+	font-size: 0.7rem;
+	font-weight: 800;
+	letter-spacing: 0.16em;
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+
+.editor-styles-wrapper .is-style-note {
+	padding: 1.25rem 1.4rem;
+	border-left: 4px solid var(--acuto-teal, #0f766e);
+	background: var(--acuto-bg-soft, #f2faf8);
+	color: var(--acuto-ink-soft, #243b38);
+	font-family: var(--acuto-font-sans, system-ui, sans-serif);
+	font-size: 0.92rem;
+	line-height: 1.7;
+}
+
+.editor-styles-wrapper .is-style-verdict {
+	padding: 2rem;
+	background: #0b1f1d;
+	color: #edf7f4;
+}
+
+.editor-styles-wrapper .is-style-verdict h2,
+.editor-styles-wrapper .is-style-verdict h3,
+.editor-styles-wrapper .is-style-verdict h4,
+.editor-styles-wrapper .is-style-verdict strong {
+	color: #edf7f4;
+}
+
+.editor-styles-wrapper .is-style-verdict p,
+.editor-styles-wrapper .is-style-verdict li {
+	color: rgba(237, 247, 244, 0.82);
+}
+
+.editor-styles-wrapper .is-style-verdict .is-style-eyebrow {
+	color: #14b8a6;
+}
+
+.editor-styles-wrapper .is-style-pros-cons {
+	padding-top: 1.4rem;
+	border-top: 2px solid var(--acuto-line, #d6e6e3);
+}
+
+.editor-styles-wrapper .is-style-pros-cons h3 {
+	margin-top: 0;
+	color: var(--acuto-teal, #0f766e);
+	font-family: var(--acuto-font-sans, system-ui, sans-serif);
+	font-size: 0.9rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.editor-styles-wrapper .is-style-pros-cons ul {
+	padding-left: 0;
+	list-style: none;
+}
+
+.editor-styles-wrapper .is-style-pros-cons li {
+	position: relative;
+	padding-left: 1.3rem;
+	font-family: var(--acuto-font-sans, system-ui, sans-serif);
+	font-size: 0.94rem;
+	line-height: 1.65;
+}
+
+.editor-styles-wrapper .is-style-pros-cons li::before {
+	content: "—";
+	position: absolute;
+	left: 0;
+	color: var(--acuto-teal, #0f766e);
+}
+
+.editor-styles-wrapper .is-style-spec-table th {
+	border-bottom-color: var(--acuto-teal, #0f766e);
+}
+
+.editor-styles-wrapper .acuto-doc-title {
+	font-size: 2.8rem;
+	line-height: 1.05;
+}
+
+.editor-styles-wrapper .acuto-standfirst {
+	color: var(--acuto-ink-soft, #243b38);
+	font-family: var(--acuto-font-display, "Source Han Serif SC", "Noto Serif SC", "Songti SC", SimSun, Georgia, serif);
+	font-size: 1.2rem;
+	line-height: 1.6;
+}
+
+.editor-styles-wrapper .acuto-caption {
+	color: var(--acuto-muted, #5f7572);
+	font-family: var(--acuto-font-sans, system-ui, sans-serif);
+	font-size: 0.78rem;
+	line-height: 1.55;
+}

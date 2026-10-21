@@ -1,0 +1,45 @@
+/*
+Theme Name: ACU-TO Editorial
+Theme URI: https://acu-to.example/
+Author: ACU-TO
+Author URI: https://acu-to.example/
+Description: ACU-TO 资讯与评测发布主题。编辑式杂志排版、淡青/青黑双主题、Gutenberg 样式、Word 导入与静态导出支持。
+Version: 1.0.0
+Requires at least: 6.5
+Tested up to: 7.1
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: acu-to
+Tags: news, editorial, blog, custom-logo, custom-menu, featured-images, block-styles, wide-blocks, translation-ready, accessibility-ready
+
+ACU-TO Editorial is distributed under the terms of the GNU GPL v2 or later.
+
+The complete design system lives in assets/css/main.css so that it can be
+pre-rendered and shipped as a self-contained static bundle. This file only
+contains a tiny baseline that prevents a flash of unstyled content before the
+main stylesheet is parsed.
+------------------------------------------------------------------------------ */
+
+html {
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	background-color: #ffffff;
+	color: #0b1f1d;
+	font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+img,
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	color: #0f766e;
+}
+
