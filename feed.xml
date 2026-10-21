@@ -5,9 +5,17 @@
 		<link>https://doublepigeon.github.io/Acuto/</link>
 		<description>独立观察，深度分析</description>
 		<language>zh-CN</language>
-		<lastBuildDate>Wed, 21 Oct 2026 09:10:35 +0000</lastBuildDate>
+		<lastBuildDate>Wed, 21 Oct 2026 09:32:35 +0000</lastBuildDate>
 		<generator>ACU-TO Core</generator>
 		<atom:link href="https://doublepigeon.github.io/Acuto/feed.xml" rel="self" type="application/rss+xml" />
+		<item>
+			<title>GPT-6 Astra 深度评测：OpenAI 旗舰模型能否真正“操作电脑”？</title>
+			<link>https://doublepigeon.github.io/Acuto/gpt-6-astra-%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%ef%bc%9aopenai-%e6%97%97%e8%88%b0%e6%a8%a1%e5%9e%8b%e8%83%bd%e5%90%a6%e7%9c%9f%e6%ad%a3%e6%93%8d%e4%bd%9c%e7%94%b5%e8%84%91%ef%bc%9f/</link>
+			<guid isPermaLink="true">https://doublepigeon.github.io/Acuto/gpt-6-astra-%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%ef%bc%9aopenai-%e6%97%97%e8%88%b0%e6%a8%a1%e5%9e%8b%e8%83%bd%e5%90%a6%e7%9c%9f%e6%ad%a3%e6%93%8d%e4%bd%9c%e7%94%b5%e8%84%91%ef%bc%9f/</guid>
+			<pubDate>Wed, 21 Oct 2026 09:31:05 +0000</pubDate>
+			<description>2026 年 9 月，OpenAI 再次把前沿模型的发布节奏推到了行业视野中心。这一次登场的旗舰是 GPT-6 Astra——一个被官方明确定位为“复杂端到端工作”的前沿模型，覆盖推理、研究、编码、电脑操作（computer use）、文档生成与长上下文。消息一出，社区最多的评价是“AGI 味道很浓”，但紧接着又补上一句“不是 AGI，但确实很强”。 本文从评测视角回答三个问题：GPT-6 Astra 到底新增了什么能力？它的评测数据该怎么读？在真实工作流里它值不值得用、用在哪里。文中所有数字均为厂商公布或公开报道，仅供参考。 一、基本定位与发布信息 先把基本盘交代清楚。GPT-6 Astra 由 OpenAI 开发，前代模型是 GPT-5.6 Sol，主要竞品锁定 Anthropic 的 Claude Fable 5.1 / Claude Opus 5 与 Google 的 Gem…</description>
+			<category>评测</category>
+		</item>
 		<item>
 			<title>如何让AI推荐我的产品</title>
 			<link>https://doublepigeon.github.io/Acuto/%e5%a6%82%e4%bd%95%e8%ae%a9ai%e6%8e%a8%e8%8d%90%e6%88%91%e7%9a%84%e4%ba%a7%e5%93%81/</link>

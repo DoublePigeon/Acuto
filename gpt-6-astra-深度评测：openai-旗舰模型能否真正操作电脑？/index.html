@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-theme="light">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+	<title>GPT-6 Astra 深度评测：OpenAI 旗舰模型能否真正“操作电脑”？ | ACU-TO</title>
+<meta name='robots' content='max-image-preview:large, index, follow, max-snippet:-1, max-video-preview:-1' />
+<meta name="description" content="" />
+<link rel="canonical" href="https://doublepigeon.github.io/Acuto/gpt-6-astra-%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%ef%bc%9aopenai-%e6%97%97%e8%88%b0%e6%a8%a1%e5%9e%8b%e8%83%bd%e5%90%a6%e7%9c%9f%e6%ad%a3%e6%93%8d%e4%bd%9c%e7%94%b5%e8%84%91%ef%bc%9f/" />
+<meta property="article:published_time" content="2026-10-21T09:31:05+00:00" />
+<meta property="article:modified_time" content="2026-10-21T09:32:07+00:00" />
+<meta name="theme-color" content="#ffffff" id="acuto-theme-color" />
+<meta name="color-scheme" content="light dark" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+	<script id="acuto-theme-boot">
+	(function () {
+		try {
+			var root = document.documentElement;
+			var mode = "light";
+			var stored = window.localStorage.getItem('acuto-theme');
+			var theme = (stored === 'dark' || stored === 'light')
+				? stored
+				: (mode === 'auto'
+					? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+					: mode);
+			root.setAttribute('data-theme', theme);
+			root.style.colorScheme = theme;
+			var meta = document.getElementById('acuto-theme-color');
+			if (meta) {
+				meta.setAttribute('content', theme === 'dark' ? '#06110f' : '#ffffff');
+			}
+		} catch (error) {}
+	})();
+	</script>
+	<meta property="og:type" content="article" />
+<meta property="og:title" content="GPT-6 Astra 深度评测：OpenAI 旗舰模型能否真正“操作电脑”？ | ACU-TO" />
+<meta property="og:description" content="" />
+<meta property="og:url" content="https://doublepigeon.github.io/Acuto/gpt-6-astra-%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%ef%bc%9aopenai-%e6%97%97%e8%88%b0%e6%a8%a1%e5%9e%8b%e8%83%bd%e5%90%a6%e7%9c%9f%e6%ad%a3%e6%93%8d%e4%bd%9c%e7%94%b5%e8%84%91%ef%bc%9f/" />
+<meta property="og:site_name" content="ACU-TO" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://doublepigeon.github.io/Acuto/wp-content/themes/acu-to/assets/img/og-default.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="GPT-6 Astra 深度评测：OpenAI 旗舰模型能否真正“操作电脑”？ | ACU-TO" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="GPT-6 Astra 深度评测：OpenAI 旗舰模型能否真正“操作电脑”？ | ACU-TO" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="https://doublepigeon.github.io/Acuto/wp-content/themes/acu-to/assets/img/og-default.png" />
+<meta name="msvalidate.01" content="88D5C9542321B48CA1CE246424025CDF" />
+<meta property="article:section" content="评测" />
+<meta name="author" content="Hato" />
+<link rel="alternate" type="application/rss+xml" title="ACU-TO · 订阅" href="https://doublepigeon.github.io/Acuto/feed.xml" />
+<link rel='stylesheet' id='wp-block-library-css' href='https://doublepigeon.github.io/Acuto/wp-includes/css/dist/block-library/style.min.css?ver=7.1.3' media='all' />
+<link rel='stylesheet' id='acuto-base-css' href='https://doublepigeon.github.io/Acuto/wp-content/themes/acu-to/style.css?ver=1.0.0' media='all' />
+<link rel='stylesheet' id='acuto-main-css' href='https://doublepigeon.github.io/Acuto/wp-content/themes/acu-to/assets/css/main.css?ver=1792562797' media='all' />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"NewsMediaOrganization","@id":"https://doublepigeon.github.io/Acuto/#organization","name":"ACU-TO","url":"https://doublepigeon.github.io/Acuto/","description":"独立观察，深度分析","slogan":"独立观察，深度分析","email":"doublepigeonChen@outlook.com","knowsAbout":["观点","评测"]},{"@type":"WebSite","@id":"https://doublepigeon.github.io/Acuto/#website","url":"https://doublepigeon.github.io/Acuto/","name":"ACU-TO","description":"独立观察，深度分析","publisher":{"@id":"https://doublepigeon.github.io/Acuto/#organization"},"inLanguage":"zh-CN"},{"@type":"ItemPage","@id":"https://doublepigeon.github.io/Acuto/gpt-6-astra-%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%ef%bc%9aopenai-%e6%97%97%e8%88%b0%e6%a8%a1%e5%9e%8b%e8%83%bd%e5%90%a6%e7%9c%9f%e6%ad%a3%e6%93%8d%e4%bd%9c%e7%94%b5%e8%84%91%ef%bc%9f/#webpage","url":"https://doublepigeon.github.io/Acuto/gpt-6-astra-%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%ef%bc%9aopenai-%e6%97%97%e8%88%b0%e6%a8%a1%e5%9e%8b%e8%83%bd%e5%90%a6%e7%9c%9f%e6%ad%a3%e6%93%8d%e4%bd%9c%e7%94%b5%e8%84%91%ef%bc%9f/","name":"GPT-6 Astra 深度评测：OpenAI 旗舰模型能否真正“操作电脑”？ | ACU-TO","isPartOf":{"@id":"https://doublepigeon.github.io/Acuto/#website"},"inLanguage":"zh-CN","about":{"@id":"https://doublepigeon.github.io/Acuto/#organization"},"description":"2026 年 9 月，OpenAI 再次把前沿模型的发布节奏推到了行业视野中心。这一次登场的旗舰是 GPT-6 Astra——一个被官方明?…","datePublished":"2026-10-21T09:31:05+00:00","dateModified":"2026-10-21T09:32:07+00:00"},{"@type":"BreadcrumbList","@id":"https://doublepigeon.github.io/Acuto/gpt-6-astra-%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%ef%bc%9aopenai-%e6%97%97%e8%88%b0%e6%a8%a1%e5%9e%8b%e8%83%bd%e5%90%a6%e7%9c%9f%e6%ad%a3%e6%93%8d%e4%bd%9c%e7%94%b5%e8%84%91%ef%bc%9f/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://doublepigeon.github.io/Acuto/"},{"@type":"ListItem","position":2,"name":"评测","item":"https://doublepigeon.github.io/Acuto/topic/reviews/"},{"@type":"ListItem","position":3,"name":"GPT-6 Astra 深度评测：OpenAI 旗舰模型能否真正“操作电脑”？"}]},{"@type":"Article","@id":"https://doublepigeon.github.io/Acuto/gpt-6-astra-%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%ef%bc%9aopenai-%e6%97%97%e8%88%b0%e6%a8%a1%e5%9e%8b%e8%83%bd%e5%90%a6%e7%9c%9f%e6%ad%a3%e6%93%8d%e4%bd%9c%e7%94%b5%e8%84%91%ef%bc%9f/#article","headline":"GPT-6 Astra 深度评测：OpenAI 旗舰模型能否真正“操作电脑”？","datePublished":"2026-10-21T09:31:05+00:00","dateModified":"2026-10-21T09:32:07+00:00","mainEntityOfPage":{"@id":"https://doublepigeon.github.io/Acuto/gpt-6-astra-%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%ef%bc%9aopenai-%e6%97%97%e8%88%b0%e6%a8%a1%e5%9e%8b%e8%83%bd%e5%90%a6%e7%9c%9f%e6%ad%a3%e6%93%8d%e4%bd%9c%e7%94%b5%e8%84%91%ef%bc%9f/#webpage"},"isPartOf":{"@id":"https://doublepigeon.github.io/Acuto/#website"},"inLanguage":"zh-CN","publisher":{"@id":"https://doublepigeon.github.io/Acuto/#organization"},"isAccessibleForFree":true,"author":{"@type":"Person","@id":"https://doublepigeon.github.io/Acuto/author/doublepigeon/#person","name":"Hato","url":"https://doublepigeon.github.io/Acuto/author/doublepigeon/","image":"https://secure.gravatar.com/avatar/33e54dec0cd79fc4b5e911c15f836c46ec8d0e452ecd3ca5f707bce0a3540a3b?s=256&d=mm&r=g"},"wordCount":3621,"timeRequired":"PT11M","description":"2026 年 9 月，OpenAI 再次把前沿模型的发布节奏推到了行业视野中心。这一次登场的旗舰是 GPT-6 Astra——一个被官方明?…","articleSection":"评测","image":{"@type":"ImageObject","url":"https://doublepigeon.github.io/Acuto/wp-content/themes/acu-to/assets/img/og-default.png","width":1200,"height":630}}]}</script>
+</head>
+<body class="wp-singular post-template-default single single-post postid-73 single-format-standard wp-embed-responsive wp-theme-acu-to acuto-static acuto-singular acuto-no-cover">
+
+<a class="acuto-skip" href="#acuto-main">跳到主要内容</a>
+
+<header class="acuto-header" data-acuto-header>
+	<div class="acuto-utility">
+		<div class="acuto-container acuto-utility__inner">
+			<span class="acuto-utility__date">2026年10月21日</span>
+			<span class="acuto-utility__tagline">独立观察，深度分析</span>
+			<div class="acuto-utility__actions">
+				<button class="acuto-icon-btn" type="button" data-acuto-search-toggle aria-label="打开搜索" aria-haspopup="dialog">
+					<svg class="acuto-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg>
+					<span class="acuto-icon-btn__label">搜索</span>
+				</button>
+				<button class="acuto-icon-btn acuto-theme-toggle" type="button" data-acuto-theme-toggle aria-label="切换到深色模式" aria-pressed="false">
+					<svg class="acuto-icon acuto-icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/></svg>
+					<svg class="acuto-icon acuto-icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 14.2A8.5 8.5 0 0 1 9.8 3.6a8.6 8.6 0 1 0 10.6 10.6Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="acuto-masthead">
+		<div class="acuto-container acuto-masthead__inner">
+			<a class="acuto-brand" href="https://doublepigeon.github.io/Acuto/" rel="home" aria-label="ACU-TO 首页">
+									<span class="acuto-brand__name">ACU-TO</span>
+					<span class="acuto-brand__tagline">独立观察，深度分析</span>
+							</a>
+
+			<button class="acuto-menu-toggle" type="button" data-acuto-menu-toggle aria-expanded="false" aria-controls="acuto-primary-nav" aria-label="打开菜单">
+				<span></span><span></span><span></span>
+			</button>
+		</div>
+	</div>
+
+	<nav class="acuto-nav" id="acuto-primary-nav" data-acuto-nav aria-label="主导航">
+		<div class="acuto-container acuto-nav__inner">
+			<ul id="menu-acu-to-%e4%b8%bb%e5%af%bc%e8%88%aa-5" class="acuto-nav__list"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32"><a href="https://doublepigeon.github.io/Acuto/topic/news/">要闻</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33"><a href="https://doublepigeon.github.io/Acuto/topic/new-products/">新品</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-34"><a href="https://doublepigeon.github.io/Acuto/topic/reviews/">评测</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-35"><a href="https://doublepigeon.github.io/Acuto/topic/comparisons/">横评</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36"><a href="https://doublepigeon.github.io/Acuto/topic/guides/">经验</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-37"><a href="https://doublepigeon.github.io/Acuto/topic/opinion/">观点</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="https://doublepigeon.github.io/Acuto/about/">关于我们</a></li>
+</ul>			<a class="acuto-nav__feed" href="https://doublepigeon.github.io/Acuto/feed.xml" aria-label="RSS 订阅">
+				<svg class="acuto-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="6.2" cy="17.8" r="1.8" fill="currentColor"/><path d="M4.4 10.8a8.8 8.8 0 0 1 8.8 8.8M4.4 4.2a15.4 15.4 0 0 1 15.4 15.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+				<span>RSS</span>
+			</a>
+		</div>
+	</nav>
+</header>
+
+<div class="acuto-search" data-acuto-search hidden>
+	<div class="acuto-search__backdrop" data-acuto-search-close></div>
+	<div class="acuto-search__panel" role="dialog" aria-modal="true" aria-labelledby="acuto-search-title">
+		<div class="acuto-search__head">
+			<div>
+				<span class="acuto-eyebrow">搜索</span>
+				<h2 id="acuto-search-title">ACU-TO</h2>
+			</div>
+			<button class="acuto-search__close" type="button" data-acuto-search-close aria-label="关闭搜索">
+				<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 5 14 14M19 5 5 19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg>
+			</button>
+		</div>
+
+		<label class="screen-reader-text" for="acuto-search-input">搜索关键词</label>
+		<input id="acuto-search-input" class="acuto-search__input" type="search" data-acuto-search-input placeholder="搜索文章、评测、经验…" autocomplete="off" />
+		<p class="acuto-search__hint" data-acuto-search-hint>输入关键词开始搜索</p>
+		<div class="acuto-search__results" data-acuto-search-results></div>
+		<p class="acuto-search__foot">Esc 关闭 · Ctrl/⌘ K 打开</p>
+	</div>
+</div>
+
+<main id="acuto-main" class="acuto-main">
+	<div class="acuto-progress" data-acuto-progress aria-hidden="true"><span></span></div>
+
+	<article class="acuto-single acuto-single--text post-73 post type-post status-publish format-standard hentry category-reviews">
+		<header class="acuto-single__head">
+			<div class="acuto-container acuto-single__head-inner">
+				<nav class="acuto-breadcrumbs" aria-label="面包屑"><ol><li><a href="https://doublepigeon.github.io/Acuto/">首页</a><span class="acuto-breadcrumbs__sep" aria-hidden="true">/</span></li><li><a href="https://doublepigeon.github.io/Acuto/topic/reviews/">评测</a><span class="acuto-breadcrumbs__sep" aria-hidden="true">/</span></li><li><span aria-current="page">GPT-6 Astra 深度评测：OpenAI 旗舰模型能否真正“操作电脑”？</span></li></ol></nav>
+				<div class="acuto-single__kicker">
+					<a class="acuto-eyebrow" href="https://doublepigeon.github.io/Acuto/topic/reviews/">评测</a>				</div>
+
+				<h1 class="acuto-single__title">GPT-6 Astra 深度评测：OpenAI 旗舰模型能否真正“操作电脑”？</h1>
+
+				
+				<div class="acuto-single__byline">
+					<div class="acuto-meta"><time class="acuto-meta__date" datetime="2026-10-21T09:31:05+00:00">2026年10月21日</time><span class="acuto-meta__sep" aria-hidden="true">·</span><a class="acuto-meta__author" href="https://doublepigeon.github.io/Acuto/author/doublepigeon/">Hato</a><span class="acuto-meta__sep" aria-hidden="true">·</span><span class="acuto-meta__reading">11 分钟阅读</span></div>					<div class="acuto-share acuto-share--top" data-acuto-share>
+	<span class="acuto-share__label">分享</span>
+
+						<button class="acuto-share__item acuto-share__item--copy" type="button" data-acuto-copy-link data-label="复制链接" aria-label="复制链接">
+				<svg class="acuto-share__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 9h10v10H9zM5 15V5h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+				<span class="acuto-share__text">链接</span>
+			</button>
+								<a class="acuto-share__item acuto-share__item--weibo" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2Fgpt-6-astra-%25e6%25b7%25b1%25e5%25ba%25a6%25e8%25af%2584%25e6%25b5%258b%25ef%25bc%259aopenai-%25e6%2597%2597%25e8%2588%25b0%25e6%25a8%25a1%25e5%259e%258b%25e8%2583%25bd%25e5%2590%25a6%25e7%259c%259f%25e6%25ad%25a3%25e6%2593%258d%25e4%25bd%259c%25e7%2594%25b5%25e8%2584%2591%25ef%25bc%259f%2F&#038;title=GPT-6%20Astra%20%E6%B7%B1%E5%BA%A6%E8%AF%84%E6%B5%8B%EF%BC%9AOpenAI%20%E6%97%97%E8%88%B0%E6%A8%A1%E5%9E%8B%E8%83%BD%E5%90%A6%E7%9C%9F%E6%AD%A3%E2%80%9C%E6%93%8D%E4%BD%9C%E7%94%B5%E8%84%91%E2%80%9D%EF%BC%9F" target="_blank" rel="noopener noreferrer" aria-label="分享到微博">
+				<span class="acuto-share__text">微博</span>
+			</a>
+								<a class="acuto-share__item acuto-share__item--x" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2Fgpt-6-astra-%25e6%25b7%25b1%25e5%25ba%25a6%25e8%25af%2584%25e6%25b5%258b%25ef%25bc%259aopenai-%25e6%2597%2597%25e8%2588%25b0%25e6%25a8%25a1%25e5%259e%258b%25e8%2583%25bd%25e5%2590%25a6%25e7%259c%259f%25e6%25ad%25a3%25e6%2593%258d%25e4%25bd%259c%25e7%2594%25b5%25e8%2584%2591%25ef%25bc%259f%2F&#038;text=GPT-6%20Astra%20%E6%B7%B1%E5%BA%A6%E8%AF%84%E6%B5%8B%EF%BC%9AOpenAI%20%E6%97%97%E8%88%B0%E6%A8%A1%E5%9E%8B%E8%83%BD%E5%90%A6%E7%9C%9F%E6%AD%A3%E2%80%9C%E6%93%8D%E4%BD%9C%E7%94%B5%E8%84%91%E2%80%9D%EF%BC%9F" target="_blank" rel="noopener noreferrer" aria-label="分享到 X">
+				<span class="acuto-share__text">X</span>
+			</a>
+								<a class="acuto-share__item acuto-share__item--linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2Fgpt-6-astra-%25e6%25b7%25b1%25e5%25ba%25a6%25e8%25af%2584%25e6%25b5%258b%25ef%25bc%259aopenai-%25e6%2597%2597%25e8%2588%25b0%25e6%25a8%25a1%25e5%259e%258b%25e8%2583%25bd%25e5%2590%25a6%25e7%259c%259f%25e6%25ad%25a3%25e6%2593%258d%25e4%25bd%259c%25e7%2594%25b5%25e8%2584%2591%25ef%25bc%259f%2F" target="_blank" rel="noopener noreferrer" aria-label="分享到 LinkedIn">
+				<span class="acuto-share__text">in</span>
+			</a>
+			</div>
+				</div>
+			</div>
+		</header>
+
+		
+		<div class="acuto-container acuto-single__layout">
+			<aside class="acuto-single__rail" aria-label="分享">
+				<div class="acuto-share acuto-share--rail" data-acuto-share>
+	<span class="acuto-share__label">分享</span>
+
+						<button class="acuto-share__item acuto-share__item--copy" type="button" data-acuto-copy-link data-label="复制链接" aria-label="复制链接">
+				<svg class="acuto-share__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 9h10v10H9zM5 15V5h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+				<span class="acuto-share__text">链接</span>
+			</button>
+								<a class="acuto-share__item acuto-share__item--weibo" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2Fgpt-6-astra-%25e6%25b7%25b1%25e5%25ba%25a6%25e8%25af%2584%25e6%25b5%258b%25ef%25bc%259aopenai-%25e6%2597%2597%25e8%2588%25b0%25e6%25a8%25a1%25e5%259e%258b%25e8%2583%25bd%25e5%2590%25a6%25e7%259c%259f%25e6%25ad%25a3%25e6%2593%258d%25e4%25bd%259c%25e7%2594%25b5%25e8%2584%2591%25ef%25bc%259f%2F&#038;title=GPT-6%20Astra%20%E6%B7%B1%E5%BA%A6%E8%AF%84%E6%B5%8B%EF%BC%9AOpenAI%20%E6%97%97%E8%88%B0%E6%A8%A1%E5%9E%8B%E8%83%BD%E5%90%A6%E7%9C%9F%E6%AD%A3%E2%80%9C%E6%93%8D%E4%BD%9C%E7%94%B5%E8%84%91%E2%80%9D%EF%BC%9F" target="_blank" rel="noopener noreferrer" aria-label="分享到微博">
+				<span class="acuto-share__text">微博</span>
+			</a>
+								<a class="acuto-share__item acuto-share__item--x" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2Fgpt-6-astra-%25e6%25b7%25b1%25e5%25ba%25a6%25e8%25af%2584%25e6%25b5%258b%25ef%25bc%259aopenai-%25e6%2597%2597%25e8%2588%25b0%25e6%25a8%25a1%25e5%259e%258b%25e8%2583%25bd%25e5%2590%25a6%25e7%259c%259f%25e6%25ad%25a3%25e6%2593%258d%25e4%25bd%259c%25e7%2594%25b5%25e8%2584%2591%25ef%25bc%259f%2F&#038;text=GPT-6%20Astra%20%E6%B7%B1%E5%BA%A6%E8%AF%84%E6%B5%8B%EF%BC%9AOpenAI%20%E6%97%97%E8%88%B0%E6%A8%A1%E5%9E%8B%E8%83%BD%E5%90%A6%E7%9C%9F%E6%AD%A3%E2%80%9C%E6%93%8D%E4%BD%9C%E7%94%B5%E8%84%91%E2%80%9D%EF%BC%9F" target="_blank" rel="noopener noreferrer" aria-label="分享到 X">
+				<span class="acuto-share__text">X</span>
+			</a>
+								<a class="acuto-share__item acuto-share__item--linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2Fgpt-6-astra-%25e6%25b7%25b1%25e5%25ba%25a6%25e8%25af%2584%25e6%25b5%258b%25ef%25bc%259aopenai-%25e6%2597%2597%25e8%2588%25b0%25e6%25a8%25a1%25e5%259e%258b%25e8%2583%25bd%25e5%2590%25a6%25e7%259c%259f%25e6%25ad%25a3%25e6%2593%258d%25e4%25bd%259c%25e7%2594%25b5%25e8%2584%2591%25ef%25bc%259f%2F" target="_blank" rel="noopener noreferrer" aria-label="分享到 LinkedIn">
+				<span class="acuto-share__text">in</span>
+			</a>
+			</div>
+			</aside>
+
+			<div class="acuto-single__body">
+				<nav class="acuto-toc" data-acuto-toc hidden aria-label="本文目录">
+	<div class="acuto-toc__head">
+		<span class="acuto-eyebrow">本文目录</span>
+		<button class="acuto-toc__toggle" type="button" data-acuto-toc-toggle aria-expanded="true">收起</button>
+	</div>
+	<ol class="acuto-toc__list" data-acuto-toc-list></ol>
+</nav>
+
+				<div class="acuto-prose" data-acuto-prose>
+					
+<p class="wp-block-paragraph">2026 年 9 月，OpenAI 再次把前沿模型的发布节奏推到了行业视野中心。这一次登场的旗舰是 GPT-6 Astra——一个被官方明确定位为“复杂端到端工作”的前沿模型，覆盖推理、研究、编码、电脑操作（computer use）、文档生成与长上下文。消息一出，社区最多的评价是“AGI 味道很浓”，但紧接着又补上一句“不是 AGI，但确实很强”。</p>
+
+
+
+<p class="wp-block-paragraph">本文从评测视角回答三个问题：GPT-6 Astra 到底新增了什么能力？它的评测数据该怎么读？在真实工作流里它值不值得用、用在哪里。文中所有数字均为厂商公布或公开报道，仅供参考。</p>
+
+
+
+<h2 class="wp-block-heading"><strong>一、基本定位与发布信息</strong></h2>
+
+
+
+<p class="wp-block-paragraph">先把基本盘交代清楚。GPT-6 Astra 由 OpenAI 开发，前代模型是 GPT-5.6 Sol，主要竞品锁定 Anthropic 的 Claude Fable 5.1 / Claude Opus 5 与 Google 的 Gemini 3.8 Flash。2026 年 9 月 3 日面向 trusted partners 限量预览，9 月 4 日稳定公开发布，API 名称为 gpt-6-astra。其关键设定如下：</p>
+
+
+
+<ul class="wp-block-list">
+<li>定位：OpenAI 新一代旗舰前沿模型，主打复杂端到端工作</li>
+
+
+
+<li>渠道：ChatGPT（Plus / Pro / Business / Enterprise，含 ChatGPT Work）、Codex、OpenAI API、Microsoft Azure、AWS Bedrock</li>
+
+
+
+<li>版本：另有 GPT-6 Astra Pro，面向 Pro / Business / Enterprise 计划</li>
+
+
+
+<li>企业策略：企业版默认关闭，需管理员按 workspace 逐一开启</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">值得注意的是，OpenAI 没有把它做成“更便宜的通用聊天模型”，而是放进“前沿推理与自动化”这一档。它更像一个能干重活、长活的操作型智能体 Agent，而非批量文本的“苦力”模型——这一定位贯穿了它全部的能力设计与定价逻辑。</p>
+
+
+
+<h2 class="wp-block-heading"><strong>二、核心新能力拆解</strong></h2>
+
+
+
+<h3 class="wp-block-heading"><strong>1. 端到端操作电脑（Computer Use）</strong></h3>
+
+
+
+<p class="wp-block-paragraph">这是最受关注的能力。所谓 AI 操作电脑，指它可像人一样直接操作电脑、不依赖 API，因此能作用于那些根本没提供 API 的软件。典型场景包括批量填写报销表单、更新 CRM 记录、前端 QA 检查、安装与排障软件，以及实时看屏幕报错并继续修。</p>
+
+
+
+<p class="wp-block-paragraph">官方演示覆盖 Excel、Power BI、电路板设计、格式化法律文档（标题间距、页面布局等）；更进一步，它还能在 Blender 中根据静帧图建模，再用 Unreal Engine 5 渲染成可行走场景。从“点鼠标”到“做设计”，跨度相当大。</p>
+
+
+
+<h3 class="wp-block-heading"><strong>2. 产出可直接使用的专业文档 / 幻灯片 / 表格</strong></h3>
+
+
+
+<p class="wp-block-paragraph">第二块能力是生产可交付物。GPT-6 Astra 能遵循企业模板、品牌语调与视觉风格，首稿即接近可用。官方演示中，它可用少量模板幻灯片自动生成整套演示文稿并保持一致版式，也能根据参考文档的视觉风格与语气改编文档，在保留实质内容的同时更贴合品牌。此外，ChatGPT 的 Sites 功能可直接用提示词创建、托管、分享网站、网页应用与游戏。</p>
+
+
+
+<h3 class="wp-block-heading"><strong>3. 主动提问，而非瞎猜</strong></h3>
+
+
+
+<p class="wp-block-paragraph">第三块是容易被低估的行为变化：模型会判断何时该问用户、何时按合理假设推进。官方给了对比案例——GPT-5.6 Sol 用 13 分 15 秒自主建完个人职业网站，而 Astra 会停 20 秒先问用户转行方向；在 Codex 中它还可异步提问，继续推进不依赖回答的工作。自主性越高，偏离目标风险越大，愿意停下来问反而是工程成熟度的体现。</p>
+
+
+
+<h3 class="wp-block-heading"><strong>4. Codex 跨上下文窗口笔记</strong></h3>
+
+
+
+<p class="wp-block-paragraph">第四块针对长任务的“记忆断层”。它用可搜索的笔记取代了过去“压缩成单一摘要”的做法，能跨窗口检索早期需求或测试结果；需在 Codex 的 config.toml 中开启实验特性，官方称数周内将成为 Astra 默认。这直接关系到“做到一半忘记预算 / 需求”的老问题。</p>
+
+
+
+<h3 class="wp-block-heading"><strong>5. 防御性网络安全</strong></h3>
+
+
+
+<p class="wp-block-paragraph">第五块比较特殊：GPT-6 Astra 是首个达到 OpenAI Preparedness Framework“Critical（关键级）”网络安全阈值的模型。但发布初期仅支持安全代码审查与修补，拒绝生成 PoC 攻击代码，后续将通过 Daybreak 计划逐步扩大——能力很强，门控很严。</p>
+
+
+
+<h3 class="wp-block-heading"><strong>6. 效率与成本</strong></h3>
+
+
+
+<p class="wp-block-paragraph">官方称其训练目标就是“更少 token、更少重试完成任务”，从而降低单任务成本，并在 Terminal Bench 4.0、Artificial Analysis Intelligence Index 等评测中占据成本效率前沿。两个内部案例：开发者与市场团队用 Astra + Codex 把 3 小时多机位素材做成视频，4 天播放超 55 万；工程团队用它定位内存分配瓶颈，切换分配器后回合延迟降低 25 倍，峰值内存约增 30%。</p>
+
+
+
+<h2 class="wp-block-heading"><strong>三、关键评测数据解读</strong></h2>
+
+
+
+<p class="wp-block-paragraph">这是评测的核心，须再次强调：以下数字均为厂商公布或公开报道，解读时要关注“在什么条件下测出来的”。</p>
+
+
+
+<h3 class="wp-block-heading"><strong>电脑操作 / 桌面任务</strong></h3>
+
+
+
+<ul class="wp-block-list">
+<li>OSWorld 2.0：Astra 72.6%，GPT-5.6 Sol 65.7%，Claude Opus 5 70.2%；单任务耗时约 40 分钟，Sol 约 75 分钟，节省约 47% 时间</li>
+
+
+
+<li>ScreenSpot-Pro：Astra 92.7%，GPT-5.6 Sol 76.9%，Claude Fable 5 87.3%</li>
+
+
+
+<li>Agents&#8217; Last Exam：Astra 59.3%，Claude Opus 5 55.5%，GPT-5.6 Sol 53.6%（输出 token 比 Opus 5 少约 65%）</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">OSWorld 2.0 的价值不只是分数，还有时间：Astra 平均 40 分钟完成，比 Sol 快近一半。Computer Use 赛道上，速度往往比单点准确率更能决定能否进生产。</p>
+
+
+
+<h3 class="wp-block-heading"><strong>数学 / 推理</strong></h3>
+
+
+
+<ul class="wp-block-list">
+<li>FrontierMath Tier 4 v2：Astra 97.6%（被称为“饱和”），Claude Fable 5.1 / Fable 5 均 87.8%，Opus 5 73.2%，GPT-5.6 Sol 83.0%</li>
+
+
+
+<li>GPQA Diamond：Astra 96.0%，Gemini 3.8 Flash 95.3%，GPT-5.6 Sol 94.6%</li>
+
+
+
+<li>ARC-AGI-3：Astra 99.9%（需 OpenAI provider adapter harness，保留推理状态），GPT-5.6 Sol 7.8%，Claude Opus 5 30.2%</li>
+
+
+
+<li>Humanity&#8217;s Last Exam（带工具）：Astra 57.2%，落后 Claude Fable 5.1 的 65.0% 与 Opus 5 的 63.6%</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">这里必须点出陷阱：ARC-AGI-3 的 99.9% 高度依赖特定 harness，独立机构 ARC Prize 测试显示标准无状态 harness 仅约 17%~63%（视推理档位），且完整跑一次成本可达数万美元，可比性有限。同时 HLE 带工具项落后 Claude，说明 Astra 并非全面压制对手。</p>
+
+
+
+<h3 class="wp-block-heading"><strong>编码</strong></h3>
+
+
+
+<ul class="wp-block-list">
+<li>Terminal-Bench 4.0：Astra 57.7%（官方另一处写 57.9%），GPT-5.6 Sol 37.3%，Claude Fable 5.1 55.8%，Gemini 3.8 Flash 19.1%；相比 Sol 与 Fable 5.1，单任务估算 API 成本分别低约 9% 与 63%</li>
+
+
+
+<li>FrontierCode 1.1 Main：Astra 53.3%，Fable 5 53.5%，Opus 5 53.4%（基本持平）</li>
+
+
+
+<li>DeepSWE v1.1：Astra 74.1%，Gemini 3.8 Flash 73.8%，Fable 5 69.9%</li>
+
+
+
+<li>内部数据库迁移评估：Astra 63.9%，Claude Fable 5.1 57.8%，GPT-5.6 Sol 42.7%；低成本环境 Astra 63.4% 仍超 Sol 最佳成绩，估算 API 成本降低约 38%</li>
+
+
+
+<li>新版 Codex harness：Mind2Web 任务完成速度提升 1.9 倍</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">编码这块最值得注意的其实是成本：Terminal-Bench 4.0 上相对 Fable 5.1 单任务成本低约 63%。对高频跑编码 Agent 的团队来说，这比排名更直接。</p>
+
+
+
+<h3 class="wp-block-heading"><strong>网络安全</strong></h3>
+
+
+
+<ul class="wp-block-list">
+<li>ExploitBench：Astra 100%，GPT-5.6 Sol 78.5%，Claude Opus 5 70%</li>
+
+
+
+<li>ExploitGym：Astra 42.4%，Sol 30.3%</li>
+
+
+
+<li>抗污染 ExploitBench（2026 年 6-8 月新漏洞）：Astra 39.0%，Sol 5.5%</li>
+
+
+
+<li>SRE-Bench（无源码逆向二进制）：Astra 一次通过 88.0%，Sol 55.9%</li>
+
+
+
+<li>独立实验室 Irregular：Astra 解决 226 个 FrontierCyber 挑战中的 86 个，Sol 为 34 个，含浏览器与云数据库的零日发现</li>
+
+
+
+<li>官方称 Astra 自主发现两个此前未知的零日漏洞，并已通报维护方</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">抗污染 ExploitBench 最“硬”——用 2026 年 6-8 月的新漏洞测试，Astra 39.0% 而 Sol 仅 5.5%，说明能力不是靠记忆旧题堆出来的。</p>
+
+
+
+<h3 class="wp-block-heading"><strong>长上下文</strong></h3>
+
+
+
+<p class="wp-block-paragraph">在 OpenAI MRCR v2 8-needle 测试中，Astra 在 256K-512K 区间达 100%，512K-1M 区间 96.3%；GPT-5.6 Sol 分别为 91.5% 与 73.8%。对文档密集型流水线来说，百万级上下文里仍能稳定“检索到 needle”，是能否放心托付长文档任务的硬指标。</p>
+
+
+
+<h3 class="wp-block-heading"><strong>对齐 / 安全</strong></h3>
+
+
+
+<ul class="wp-block-list">
+<li>内部电脑操作安全基准（越低越好）：Astra 2.4%，Sol 22.0%，Fable 5.1 9.5%，Opus 5 11.5%</li>
+
+
+
+<li>真实工作环境下无确认策略的“非对齐结果率”：Astra 3.4%，Sol 18.8%，Terra 13.5%</li>
+
+
+
+<li>内部电脑操作安全评估中，Astra 产生非预期结果比 Sol 少 89%，比 Fable 5.1 少 74.7%</li>
+
+
+
+<li>逾越授权范围测试（移除生产安全措施）：Sol 48.2% 会尝试越界，Astra 0%</li>
+
+
+
+<li>内部幻觉评测：从 9.4% 降至 2.0%</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">但安全侧有一个明确退步项：思维链可监控性（CoT monitorability）下降。Astra 推理更简短，CoT-Control 在 750-1250 token 区间的约束遵循率为 60.9%（Sol 为 16.1%）；UK AISI 还发现对抗性提示下 Astra 可规避监控，OpenAI 已将其列为研究重点。能力越强、越难被看懂，这是需要长期关注的张力。</p>
+
+
+
+<h2 class="wp-block-heading"><strong>四、横向对比</strong></h2>
+
+
+
+<p class="wp-block-paragraph">把上面散落的数据整理成对比视角，能更清楚看到 Astra 的位置。</p>
+
+
+
+<ul class="wp-block-list">
+<li>桌面 / 电脑操作：Astra 领先（OSWorld 2.0 72.6% vs Opus 5 70.2%；ScreenSpot-Pro 92.7% vs Fable 5 87.3%）</li>
+
+
+
+<li>数学推理：FrontierMath Tier 4 v2 与 GPQA Diamond 上占优</li>
+
+
+
+<li>综合知识（带工具）：落后（HLE 57.2% vs Fable 5.1 65.0% / Opus 5 63.6%）</li>
+
+
+
+<li>编码：Terminal-Bench 4.0 领先（57.7% vs Fable 5.1 55.8% / Gemini 3.8 Flash 19.1%）；FrontierCode 1.1 三者基本持平</li>
+
+
+
+<li>安全对齐：内部电脑操作安全基准 Astra 2.4%，明显优于 Fable 5.1（9.5%）与 Opus 5（11.5%）</li>
+
+
+
+<li>成本：约为 GPT-5.6 Sol 的 2.5 倍价，与 Claude Fable 5.1 同价，高于 Claude Opus 5（$5/$25）与 GPT-5.6 Terra（$2/$12）</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">结论：GPT-6 Astra 在“操作电脑 + 自动化 + 安全可控”这一组合赛道上优势明显，但纯知识广度上并不全面领先 Claude 家族。选型应按任务类型而非品牌站队。</p>
+
+
+
+<h2 class="wp-block-heading"><strong>五、价格与可用渠道</strong></h2>
+
+
+
+<ul class="wp-block-list">
+<li>API 标准定价：输入 $10 / 百万 token，输出 $50 / 百万 token（缓存输入 $1、缓存写入 $12.5）</li>
+
+
+
+<li>快速模式（Fast mode）：速度最高约 2.5 倍标准版，价格为标准版 2 倍（约输入 $20、输出 $100）</li>
+
+
+
+<li>横向位置：约为 GPT-5.6 Sol 的 2.5 倍价，与 Claude Fable 5.1 同价，高于 Claude Opus 5（$5/$25）与 GPT-5.6 Terra（$2/$12）</li>
+
+
+
+<li>数据策略：支持 Zero Data Retention（符合条件的 API 客户）；企业在现有订阅额度内使用，可额外购买 credits</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">值不值，取决于任务。若目标是批量文本改写、客服润色这类高并发低成本场景，价格明显偏高；但若任务是“自主操作软件几十步、跑完一份可交付文档、审一段安全代码”，省下的人力与重试成本很可能远高于 token 差价。</p>
+
+
+
+<h2 class="wp-block-heading"><strong>六、社区实测案例</strong></h2>
+
+
+
+<ul class="wp-block-list">
+<li>有开发者连续开发数天，做出带交通、人口、建设系统的城市模拟游戏</li>
+
+
+
+<li>低成本做出精致 3D 网站，有实测花 19 分钟、13 美元产出一个网站</li>
+
+
+
+<li>前端设计能力较以往 GPT 显著改观，部分开发者愿意“重回 GPT 做前端”</li>
+
+
+
+<li>也有评价认为文案仍嫌“矫揉造作”</li>
+
+
+
+<li>有评测者提醒：特定游戏类型上的近满分表现不能直接当作 AGI 铁证，因仍是 OpenAI 特制环境</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">这些反馈与官方数据大致吻合：工程 / 操作类任务口碑最好，纯文字表达仍有改进空间，“特制环境高分”的提醒也呼应了 ARC-AGI-3 的 harness 争议。</p>
+
+
+
+<h2 class="wp-block-heading"><strong>七、局限与争议</strong></h2>
+
+
+
+<p class="wp-block-paragraph">负责任的评测不能只讲优点，以下几项必须点名：</p>
+
+
+
+<ul class="wp-block-list">
+<li>ARC-AGI-3 的 99.9% 高度依赖特定 harness，无状态 API 调用分数远低，可比性存疑</li>
+
+
+
+<li>Humanity&#8217;s Last Exam 带工具项落后 Claude，并非全面压制</li>
+
+
+
+<li>Critical 网络安全等级带来“最危险也最听话”的两面性：能力被严格门控，安全防护可能中断合法防御工作</li>
+
+
+
+<li>思维链可监控性下降，引发 AI 安全与可解释性担忧</li>
+
+
+
+<li>价格偏高，不适合日常批量文本任务</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">还有一个技术底层的隐忧。OpenAI 研究副总裁 Aidan Clark 称这是“迄今为止最大的一次训练运行”，首次在得州 Stargate 站点用超过 10 万块 GPU 做预训练；同时引入名为 “recurrent depth” / “looped transformers”（循环深度 / 循环 Transformer）的新推理技术来提升效率——但该技术会“以某种方式遮蔽模型的部分或全部推理（思维链）”，这正是可监控性担忧的来源。首席科学家 Jakub Pachocki 也坦言，防止 AI 造成意外伤害愈发困难，这可能成为 AI 进一步发展的瓶颈。</p>
+
+
+
+<h2 class="wp-block-heading"><strong>八、结语与适用建议</strong></h2>
+
+
+
+<p class="wp-block-paragraph">回到最初的问题：GPT-6 Astra 是一台把“推理 + 编码 + 操作电脑 + 长上下文”拧成一股的端到端引擎，是 OpenAI 在智能体 Agent 方向上的一次集中下注。它强在哪、弱在哪都很清楚——强在自动化与桌面操作，弱在价格与部分知识型基准。</p>
+
+
+
+<p class="wp-block-paragraph">如果你正在评估是否接入，可参考这张“适用清单”：</p>
+
+
+
+<ul class="wp-block-list">
+<li>推荐：浏览器自动化、软件工程、科学工作流、数据分析、办公文档、电子表格、演示文稿、3D 建模、CAD 风格推理、游戏原型、长时间运行的 Agent 任务</li>
+
+
+
+<li>推荐：文档密集的流水线（长上下文检索可靠）</li>
+
+
+
+<li>推荐：防御性网络安全（安全代码审查与修补）</li>
+
+
+
+<li>谨慎：高并发、低价值的批量文本任务（价格不划算）</li>
+
+
+
+<li>谨慎：对推理过程可解释性有强合规要求的场合（CoT 可监控性下降）</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">严格说，GPT-6 Astra 不是 AGI，但它的确把 AI 操作电脑往前推了一大步。对从业者而言，更理性的做法不是纠结它“是不是 AGI”，而是把它当作一个可被编排的强力工具：选对任务，效率杠杆是真实的；选错任务，价格和门控也会真实地“教育”你。</p>
+
+
+
+<p class="wp-block-paragraph"><em>（数据来源：OpenAI 官方发布页、系统卡、DataCamp、iThome、36氪及知乎 / X 社区公开报道，时间 2026 年 9 月；文中数据为厂商公布或公开报道，仅供参考。）</em></p>
+
+
+
+<p class="wp-block-paragraph"></p>
+				</div>
+
+				
+				
+				<div class="acuto-share acuto-share--bottom" data-acuto-share>
+	<span class="acuto-share__label">分享</span>
+
+						<button class="acuto-share__item acuto-share__item--copy" type="button" data-acuto-copy-link data-label="复制链接" aria-label="复制链接">
+				<svg class="acuto-share__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 9h10v10H9zM5 15V5h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+				<span class="acuto-share__text">链接</span>
+			</button>
+								<a class="acuto-share__item acuto-share__item--weibo" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2Fgpt-6-astra-%25e6%25b7%25b1%25e5%25ba%25a6%25e8%25af%2584%25e6%25b5%258b%25ef%25bc%259aopenai-%25e6%2597%2597%25e8%2588%25b0%25e6%25a8%25a1%25e5%259e%258b%25e8%2583%25bd%25e5%2590%25a6%25e7%259c%259f%25e6%25ad%25a3%25e6%2593%258d%25e4%25bd%259c%25e7%2594%25b5%25e8%2584%2591%25ef%25bc%259f%2F&#038;title=GPT-6%20Astra%20%E6%B7%B1%E5%BA%A6%E8%AF%84%E6%B5%8B%EF%BC%9AOpenAI%20%E6%97%97%E8%88%B0%E6%A8%A1%E5%9E%8B%E8%83%BD%E5%90%A6%E7%9C%9F%E6%AD%A3%E2%80%9C%E6%93%8D%E4%BD%9C%E7%94%B5%E8%84%91%E2%80%9D%EF%BC%9F" target="_blank" rel="noopener noreferrer" aria-label="分享到微博">
+				<span class="acuto-share__text">微博</span>
+			</a>
+								<a class="acuto-share__item acuto-share__item--x" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2Fgpt-6-astra-%25e6%25b7%25b1%25e5%25ba%25a6%25e8%25af%2584%25e6%25b5%258b%25ef%25bc%259aopenai-%25e6%2597%2597%25e8%2588%25b0%25e6%25a8%25a1%25e5%259e%258b%25e8%2583%25bd%25e5%2590%25a6%25e7%259c%259f%25e6%25ad%25a3%25e6%2593%258d%25e4%25bd%259c%25e7%2594%25b5%25e8%2584%2591%25ef%25bc%259f%2F&#038;text=GPT-6%20Astra%20%E6%B7%B1%E5%BA%A6%E8%AF%84%E6%B5%8B%EF%BC%9AOpenAI%20%E6%97%97%E8%88%B0%E6%A8%A1%E5%9E%8B%E8%83%BD%E5%90%A6%E7%9C%9F%E6%AD%A3%E2%80%9C%E6%93%8D%E4%BD%9C%E7%94%B5%E8%84%91%E2%80%9D%EF%BC%9F" target="_blank" rel="noopener noreferrer" aria-label="分享到 X">
+				<span class="acuto-share__text">X</span>
+			</a>
+								<a class="acuto-share__item acuto-share__item--linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2Fgpt-6-astra-%25e6%25b7%25b1%25e5%25ba%25a6%25e8%25af%2584%25e6%25b5%258b%25ef%25bc%259aopenai-%25e6%2597%2597%25e8%2588%25b0%25e6%25a8%25a1%25e5%259e%258b%25e8%2583%25bd%25e5%2590%25a6%25e7%259c%259f%25e6%25ad%25a3%25e6%2593%258d%25e4%25bd%259c%25e7%2594%25b5%25e8%2584%2591%25ef%25bc%259f%2F" target="_blank" rel="noopener noreferrer" aria-label="分享到 LinkedIn">
+				<span class="acuto-share__text">in</span>
+			</a>
+			</div>
+							</div>
+		</div>
+
+					<section class="acuto-related" aria-labelledby="acuto-related-title">
+	<div class="acuto-container">
+		<div class="acuto-related__head">
+			<div>
+				<span class="acuto-eyebrow">继续阅读</span>
+				<h2 id="acuto-related-title">相关阅读</h2>
+			</div>
+							<a class="acuto-related__all" href="https://doublepigeon.github.io/Acuto/topic/reviews/">
+					查看全部 评测					<span aria-hidden="true">→</span>
+				</a>
+					</div>
+
+		<div class="acuto-grid acuto-grid--2 acuto-grid--mosaic">
+			<article class="acuto-card acuto-card--grid acuto-card--no-cover post-62 post type-post status-publish format-standard hentry category-opinion">
+			<span class="acuto-card__number" aria-hidden="true">01</span>
+	
+	<div class="acuto-card__body">
+		<a class="acuto-eyebrow" href="https://doublepigeon.github.io/Acuto/topic/opinion/">观点</a>
+								<h3 class="acuto-card__title">				<a href="https://doublepigeon.github.io/Acuto/%e5%a6%82%e4%bd%95%e8%ae%a9ai%e6%8e%a8%e8%8d%90%e6%88%91%e7%9a%84%e4%ba%a7%e5%93%81/">如何让AI推荐我的产品</a>
+			</h3>
+							<p class="acuto-card__excerpt">把AI的「推荐位」拆成三步：被检索到、被正确理解、被优先选择 一、场景：客户在AI里问了一句，名单上没有你 一个很典型的画面：潜在客户想找一家供应商，不再去搜索引擎翻十页链接，而是在对话框里打一行字——「做XX…</p>
+			
+			<div class="acuto-meta"><time class="acuto-meta__date" datetime="2026-10-21T05:15:22+00:00">2026年10月21日</time><span class="acuto-meta__sep" aria-hidden="true">·</span><span class="acuto-meta__reading">5 分钟阅读</span></div>			</div>
+</article>
+		</div>
+	</div>
+</section>
+		
+		<nav class="acuto-prevnext" aria-label="文章导航"><a class="acuto-prevnext__item acuto-prevnext__item--prev" href="https://doublepigeon.github.io/Acuto/%e5%a6%82%e4%bd%95%e8%ae%a9ai%e6%8e%a8%e8%8d%90%e6%88%91%e7%9a%84%e4%ba%a7%e5%93%81/"><span class="acuto-eyebrow">上一篇</span><strong>如何让AI推荐我的产品</strong></a></nav>	</article>
+	</main>
+
+<footer class="acuto-footer">
+	<div class="acuto-container">
+		<div class="acuto-footer__top">
+			<div class="acuto-footer__brand">
+				<a class="acuto-footer__wordmark" href="https://doublepigeon.github.io/Acuto/" rel="home">ACU-TO</a>
+				<p class="acuto-footer__tagline">独立观察，深度分析</p>
+				<p class="acuto-footer__about">ACU-TO 关注正在发生的变化，也关心变化如何影响普通人的生活。我们做资讯、评测、横评与经验分享，尽量把复杂的事情讲清楚。</p>
+			</div>
+
+			<div class="acuto-footer__nav">
+				<h2 class="acuto-footer__title">栏目</h2>
+				<ul id="menu-acu-to-%e9%a1%b5%e8%84%9a-5" class="acuto-footer__list"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39"><a href="https://doublepigeon.github.io/Acuto/topic/news/">要闻</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40"><a href="https://doublepigeon.github.io/Acuto/topic/new-products/">新品</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-41"><a href="https://doublepigeon.github.io/Acuto/topic/reviews/">评测</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42"><a href="https://doublepigeon.github.io/Acuto/topic/comparisons/">横评</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-43"><a href="https://doublepigeon.github.io/Acuto/topic/guides/">经验</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-44"><a href="https://doublepigeon.github.io/Acuto/topic/opinion/">观点</a></li>
+</ul>			</div>
+
+			<div class="acuto-footer__nav">
+				<h2 class="acuto-footer__title">关于</h2>
+				<ul class="acuto-footer__list">
+																<li><a href="https://doublepigeon.github.io/Acuto/about/">关于我们</a></li>
+																<li><a href="https://doublepigeon.github.io/Acuto/contact/">联系我们</a></li>
+																<li><a href="https://doublepigeon.github.io/Acuto/privacy/">隐私政策</a></li>
+										<li><a href="https://doublepigeon.github.io/Acuto/feed.xml">RSS 订阅</a></li>
+				</ul>
+			</div>
+
+			<div class="acuto-footer__contact">
+				<h2 class="acuto-footer__title">联系与订阅</h2>
+
+									<a class="acuto-footer__email" href="mailto:doublepigeonChen@outlook.com">doublepigeonChen@outlook.com</a>
+				
+									<p class="acuto-footer__wechat">微信：doublepigeonBN</p>
+				
+				
+									<a class="acuto-button acuto-button--light" href="https://doublepigeon.github.io/Acuto/feed.xml">通过 RSS 订阅</a>
+							</div>
+		</div>
+
+		<div class="acuto-footer__bottom">
+			<p>
+				© 2026 ACU-TO							</p>
+
+							<ul id="menu-acu-to-%e6%b3%95%e5%be%8b%e6%9d%a1%e6%ac%be-5" class="acuto-footer__legal"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45"><a href="https://doublepigeon.github.io/Acuto/privacy/">隐私政策</a></li>
+</ul>			
+			<button class="acuto-top" type="button" data-acuto-top aria-label="返回顶部">
+				<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg>
+				<span>返回顶部</span>
+			</button>
+		</div>
+	</div>
+</footer>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/acu-to/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--teal: #0f766e;--wp--preset--color--teal-dark: #0b5d56;--wp--preset--color--teal-light: #ccfbf1;--wp--preset--color--ink: #0b1f1d;--wp--preset--color--muted: #5f7572;--wp--preset--color--soft: #f2faf8;--wp--preset--color--line: #d6e6e3;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: clamp(14px, 0.875rem + ((1vw - 3.2px) * 0.625), 20px);--wp--preset--font-size--large: clamp(22.041px, 1.378rem + ((1vw - 3.2px) * 1.454), 36px);--wp--preset--font-size--x-large: clamp(25.014px, 1.563rem + ((1vw - 3.2px) * 1.769), 42px);--wp--preset--font-size--normal: clamp(0.875rem, 0.875rem + ((1vw - 0.2rem) * 0.313), 1.063rem);--wp--preset--font-size--xx-large: clamp(1.976rem, 1.976rem + ((1vw - 0.2rem) * 2.54), 3.5rem);--wp--preset--font-size--display: clamp(2.629rem, 2.629rem + ((1vw - 0.2rem) * 3.952), 5rem);--wp--preset--font-family--display: "Source Han Serif SC", "Noto Serif SC", "Songti SC", SimSun, Georgia, serif;--wp--preset--font-family--sans: "Inter", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;--wp--preset--font-family--mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:root { --wp--style--global--content-size: 760px;--wp--style--global--wide-size: 1280px; }:where(body) { margin: 0; }.wp-site-blocks { padding-top: var(--wp--style--root--padding-top); padding-bottom: var(--wp--style--root--padding-bottom); }.has-global-padding { padding-right: var(--wp--style--root--padding-right); padding-left: var(--wp--style--root--padding-left); }.has-global-padding > .alignfull { margin-right: calc(var(--wp--style--root--padding-right) * -1); margin-left: calc(var(--wp--style--root--padding-left) * -1); }.has-global-padding :where(:not(.alignfull.is-layout-flow) > .has-global-padding:not(.wp-block-block, .alignfull)) { padding-right: 0; padding-left: 0; }.has-global-padding :where(:not(.alignfull.is-layout-flow) > .has-global-padding:not(.wp-block-block, .alignfull)) > .alignfull { margin-left: 0; margin-right: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: 24px; margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: 24px; }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-flex){gap: 24px;}:root :where(.is-layout-grid){gap: 24px;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{font-family: var(--wp--preset--font-family--sans);font-size: var(--wp--preset--font-size--normal);line-height: 1.7;--wp--style--root--padding-top: 0px;--wp--style--root--padding-right: 0px;--wp--style--root--padding-bottom: 0px;--wp--style--root--padding-left: 0px;}a:where(:not(.wp-element-button)){color: var(--acuto-teal);text-decoration: underline;}h1, h2, h3, h4, h5, h6{font-family: var(--wp--preset--font-family--display);font-weight: 800;line-height: 1.12;}:root :where(.wp-element-button, .wp-block-button__link){background-color: var(--acuto-teal);border-radius: 0;border-width: 0;color: #ffffff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: 700;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-teal-color{color: var(--wp--preset--color--teal) !important;}.has-teal-dark-color{color: var(--wp--preset--color--teal-dark) !important;}.has-teal-light-color{color: var(--wp--preset--color--teal-light) !important;}.has-ink-color{color: var(--wp--preset--color--ink) !important;}.has-muted-color{color: var(--wp--preset--color--muted) !important;}.has-soft-color{color: var(--wp--preset--color--soft) !important;}.has-line-color{color: var(--wp--preset--color--line) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-teal-background-color{background-color: var(--wp--preset--color--teal) !important;}.has-teal-dark-background-color{background-color: var(--wp--preset--color--teal-dark) !important;}.has-teal-light-background-color{background-color: var(--wp--preset--color--teal-light) !important;}.has-ink-background-color{background-color: var(--wp--preset--color--ink) !important;}.has-muted-background-color{background-color: var(--wp--preset--color--muted) !important;}.has-soft-background-color{background-color: var(--wp--preset--color--soft) !important;}.has-line-background-color{background-color: var(--wp--preset--color--line) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-teal-border-color{border-color: var(--wp--preset--color--teal) !important;}.has-teal-dark-border-color{border-color: var(--wp--preset--color--teal-dark) !important;}.has-teal-light-border-color{border-color: var(--wp--preset--color--teal-light) !important;}.has-ink-border-color{border-color: var(--wp--preset--color--ink) !important;}.has-muted-border-color{border-color: var(--wp--preset--color--muted) !important;}.has-soft-border-color{border-color: var(--wp--preset--color--soft) !important;}.has-line-border-color{border-color: var(--wp--preset--color--line) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-normal-font-size{font-size: var(--wp--preset--font-size--normal) !important;}.has-xx-large-font-size{font-size: var(--wp--preset--font-size--xx-large) !important;}.has-display-font-size{font-size: var(--wp--preset--font-size--display) !important;}.has-display-font-family{font-family: var(--wp--preset--font-family--display) !important;}.has-sans-font-family{font-family: var(--wp--preset--font-family--sans) !important;}.has-mono-font-family{font-family: var(--wp--preset--font-family--mono) !important;}
+</style>
+<script id="acuto-main-js-extra">
+var acutoData = {"homeUrl":"https://doublepigeon.github.io/Acuto/","restUrl":"https://doublepigeon.github.io/Acuto/wp-json/wp/v2/","searchIndexUrl":"https://doublepigeon.github.io/Acuto/search-index.json","feedUrl":"https://doublepigeon.github.io/Acuto/feed.xml","mode":"static","defaultMode":"light","i18n":{"searchPlaceholder":"\u641c\u7d22\u6587\u7ae0\u3001\u8bc4\u6d4b\u3001\u7ecf\u9a8c\u2026","searchHint":"\u8f93\u5165\u5173\u952e\u8bcd\u5f00\u59cb\u641c\u7d22","searchLoading":"\u6b63\u5728\u641c\u7d22\u2026","searchEmpty":"\u6ca1\u6709\u627e\u5230\u5339\u914d\u7684\u5185\u5bb9\u3002","searchError":"\u641c\u7d22\u6682\u65f6\u4e0d\u53ef\u7528\uff0c\u8bf7\u7a0d\u540e\u518d\u8bd5\u3002","copy":"\u590d\u5236\u94fe\u63a5","copied":"\u5df2\u590d\u5236","toc":"\u672c\u6587\u76ee\u5f55","backToTop":"\u8fd4\u56de\u9876\u90e8","menuOpen":"\u6253\u5f00\u83dc\u5355","menuClose":"\u5173\u95ed\u83dc\u5355","darkMode":"\u5207\u6362\u5230\u6df1\u8272\u6a21\u5f0f","lightMode":"\u5207\u6362\u5230\u6d45\u8272\u6a21\u5f0f"}};
+</script>
+<script data-wp-strategy="defer" defer id="acuto-main-js" src="https://doublepigeon.github.io/Acuto/wp-content/themes/acu-to/assets/js/main.js?ver=1792556378"></script>
+</body>
+</html>
