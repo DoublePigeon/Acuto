@@ -1101,7 +1101,8 @@ html[data-theme="dark"] .acuto-theme-toggle .acuto-icon--moon {
 }
 
 .acuto-home__feature .acuto-hero__index {
-	font-size: clamp(4rem, 11vw, 9rem);
+	bottom: 1.25rem;
+	font-size: clamp(3rem, 7.5vw, 6.5rem);
 }
 
 /* Sections and grids ------------------------------------------------------- */
