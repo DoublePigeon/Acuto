@@ -5,9 +5,25 @@
 		<link>https://doublepigeon.github.io/Acuto/</link>
 		<description>独立观察，深度分析</description>
 		<language>zh-CN</language>
-		<lastBuildDate>Wed, 21 Oct 2026 13:30:31 +0000</lastBuildDate>
+		<lastBuildDate>Wed, 21 Oct 2026 13:38:37 +0000</lastBuildDate>
 		<generator>ACU-TO Core</generator>
 		<atom:link href="https://doublepigeon.github.io/Acuto/feed.xml" rel="self" type="application/rss+xml" />
+		<item>
+			<title>低成本Claude API从哪来？算链、OpenRouter、DMXAPI类中转站横评</title>
+			<link>https://doublepigeon.github.io/Acuto/%e4%bd%8e%e6%88%90%e6%9c%acclaude-api%e4%bb%8e%e5%93%aa%e6%9d%a5%ef%bc%9f%e7%ae%97%e9%93%be%e3%80%81openrouter%e3%80%81dmxapi%e7%b1%bb%e4%b8%ad%e8%bd%ac%e7%ab%99%e6%a8%aa%e8%af%84/</link>
+			<guid isPermaLink="true">https://doublepigeon.github.io/Acuto/%e4%bd%8e%e6%88%90%e6%9c%acclaude-api%e4%bb%8e%e5%93%aa%e6%9d%a5%ef%bc%9f%e7%ae%97%e9%93%be%e3%80%81openrouter%e3%80%81dmxapi%e7%b1%bb%e4%b8%ad%e8%bd%ac%e7%ab%99%e6%a8%aa%e8%af%84/</guid>
+			<pubDate>Wed, 21 Oct 2026 13:37:47 +0000</pubDate>
+			<description>一、先厘清口径：倍率怎么算，“便宜”省在哪 搜“低成本Claude API”的人常会撞见两套价格体系：一边是按官方美元标价折算的人民币报价，一边是“官方3折起”的话术。直接比两个数字很容易得出错误结论——要判断谁真便宜，得把计价口径与渠道来源分开看。 行业通用报价单位是“倍率（基于官方API定价）”，即以官方美元标价为锚折算成人民币计价的倍数，数值越低，同一份调用量的人民币支出越小。但各家口径未必一致：input 与 output 是否分别计价、缓存命中是否打折、有无最低消费，都会让账面价格失真，签约前应逐项确认。 比口径更关键的是渠道。市面低价 Claude API 大致分四级，越便宜越弱：原生直连（AWS Bedrock 原生子账号、官方直连），配额来自官方，功能最全、限流最宽松；官转／云厂商号池，用批量订阅账号配负载均衡摊薄配额，稳定性接近原生，商用接受度最高；个人合规号池／C…</description>
+			<category>Uncategorized</category>
+		</item>
+		<item>
+			<title>MiniMax H3 多模态视频生成大模型深度评测报告</title>
+			<link>https://doublepigeon.github.io/Acuto/minimax-h3-%e5%a4%9a%e6%a8%a1%e6%80%81%e8%a7%86%e9%a2%91%e7%94%9f%e6%88%90%e5%a4%a7%e6%a8%a1%e5%9e%8b%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%e6%8a%a5%e5%91%8a/</link>
+			<guid isPermaLink="true">https://doublepigeon.github.io/Acuto/minimax-h3-%e5%a4%9a%e6%a8%a1%e6%80%81%e8%a7%86%e9%a2%91%e7%94%9f%e6%88%90%e5%a4%a7%e6%a8%a1%e5%9e%8b%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%e6%8a%a5%e5%91%8a/</guid>
+			<pubDate>Wed, 21 Oct 2026 13:35:59 +0000</pubDate>
+			<description>音画原生一体化·开源权重与企业级全模态生成架构解析 一、执行摘要（Executive Summary） 2026年8月，通用人工智能创新企业 MiniMax（稀宇科技 / 海螺AI）正式发布了全新一代开源权重（Open-weight）全模态视频生成大模型 —— MiniMax H3。作为全球首批实现“原生立体声音画一体化联合生成”的开源大模型之一，H3 彻底打破了传统视频生成模型“画面无声”或“后置音频匹配”的技术瓶颈。模型支持单次推理生成最高 2K 高清分辨率、长达 15 秒的连贯视频，并在文本指令遵循、镜头运动控制、复杂音效对白同步及精准文字渲染方面展现出工业级交付能力。MiniMax H3 的开源发布，不仅标志着视频大模型从‘单纯图像动画化’迈向‘全要素电影级成片’的关键转折，也为开源 AI 社区与企业级生产管线带来了极具竞争力的本地化部署底座。 二、发布背景与产品定位 在当前…</description>
+			<category>评测</category>
+		</item>
 		<item>
 			<title>GPT-6 Astra 深度评测：OpenAI 旗舰模型能否真正“操作电脑”？</title>
 			<link>https://doublepigeon.github.io/Acuto/gpt-6-astra-%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%ef%bc%9aopenai-%e6%97%97%e8%88%b0%e6%a8%a1%e5%9e%8b%e8%83%bd%e5%90%a6%e7%9c%9f%e6%ad%a3%e6%93%8d%e4%bd%9c%e7%94%b5%e8%84%91%ef%bc%9f/</link>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-theme="light">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+	<title>低成本Claude API从哪来？算链、OpenRouter、DMXAPI类中转站横评 | ACU-TO</title>
+<meta name='robots' content='max-image-preview:large, index, follow, max-snippet:-1, max-video-preview:-1' />
+<meta name="description" content="一、先厘清口径：倍率怎么算，“便宜”省在哪 搜“低成本Claude API”的人常会撞见两套价格体系：一边是按官方美元…" />
+<link rel="canonical" href="https://doublepigeon.github.io/Acuto/%e4%bd%8e%e6%88%90%e6%9c%acclaude-api%e4%bb%8e%e5%93%aa%e6%9d%a5%ef%bc%9f%e7%ae%97%e9%93%be%e3%80%81openrouter%e3%80%81dmxapi%e7%b1%bb%e4%b8%ad%e8%bd%ac%e7%ab%99%e6%a8%aa%e8%af%84/" />
+<meta property="article:published_time" content="2026-10-21T13:37:47+00:00" />
+<meta property="article:modified_time" content="2026-10-21T13:37:47+00:00" />
+<meta name="theme-color" content="#ffffff" id="acuto-theme-color" />
+<meta name="color-scheme" content="light dark" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+	<script id="acuto-theme-boot">
+	(function () {
+		try {
+			var root = document.documentElement;
+			var mode = "light";
+			var stored = window.localStorage.getItem('acuto-theme');
+			var theme = (stored === 'dark' || stored === 'light')
+				? stored
+				: (mode === 'auto'
+					? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+					: mode);
+			root.setAttribute('data-theme', theme);
+			root.style.colorScheme = theme;
+			var meta = document.getElementById('acuto-theme-color');
+			if (meta) {
+				meta.setAttribute('content', theme === 'dark' ? '#06110f' : '#ffffff');
+			}
+		} catch (error) {}
+	})();
+	</script>
+	<meta property="og:type" content="article" />
+<meta property="og:title" content="低成本Claude API从哪来？算链、OpenRouter、DMXAPI类中转站横评 | ACU-TO" />
+<meta property="og:description" content="一、先厘清口径：倍率怎么算，“便宜”省在哪 搜“低成本Claude API”的人常会撞见两套价格体系：一边是按官方美元…" />
+<meta property="og:url" content="https://doublepigeon.github.io/Acuto/%e4%bd%8e%e6%88%90%e6%9c%acclaude-api%e4%bb%8e%e5%93%aa%e6%9d%a5%ef%bc%9f%e7%ae%97%e9%93%be%e3%80%81openrouter%e3%80%81dmxapi%e7%b1%bb%e4%b8%ad%e8%bd%ac%e7%ab%99%e6%a8%aa%e8%af%84/" />
+<meta property="og:site_name" content="ACU-TO" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://doublepigeon.github.io/Acuto/wp-content/themes/acu-to/assets/img/og-default.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="低成本Claude API从哪来？算链、OpenRouter、DMXAPI类中转站横评 | ACU-TO" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="低成本Claude API从哪来？算链、OpenRouter、DMXAPI类中转站横评 | ACU-TO" />
+<meta name="twitter:description" content="一、先厘清口径：倍率怎么算，“便宜”省在哪 搜“低成本Claude API”的人常会撞见两套价格体系：一边是按官方美元…" />
+<meta name="twitter:image" content="https://doublepigeon.github.io/Acuto/wp-content/themes/acu-to/assets/img/og-default.png" />
+<meta name="msvalidate.01" content="88D5C9542321B48CA1CE246424025CDF" />
+<meta property="article:section" content="Uncategorized" />
+<meta name="author" content="Hato" />
+<link rel="alternate" type="application/rss+xml" title="ACU-TO · 订阅" href="https://doublepigeon.github.io/Acuto/feed.xml" />
+<link rel='stylesheet' id='wp-block-library-css' href='https://doublepigeon.github.io/Acuto/wp-includes/css/dist/block-library/style.min.css?ver=7.1.3' media='all' />
+<link rel='stylesheet' id='acuto-base-css' href='https://doublepigeon.github.io/Acuto/wp-content/themes/acu-to/style.css?ver=1.0.0' media='all' />
+<link rel='stylesheet' id='acuto-main-css' href='https://doublepigeon.github.io/Acuto/wp-content/themes/acu-to/assets/css/main.css?ver=1792589409' media='all' />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"NewsMediaOrganization","@id":"https://doublepigeon.github.io/Acuto/#organization","name":"ACU-TO","url":"https://doublepigeon.github.io/Acuto/","description":"独立观察，深度分析","slogan":"独立观察，深度分析","email":"doublepigeonChen@outlook.com","knowsAbout":["Uncategorized","观点","评测"]},{"@type":"WebSite","@id":"https://doublepigeon.github.io/Acuto/#website","url":"https://doublepigeon.github.io/Acuto/","name":"ACU-TO","description":"独立观察，深度分析","publisher":{"@id":"https://doublepigeon.github.io/Acuto/#organization"},"inLanguage":"zh-CN"},{"@type":"ItemPage","@id":"https://doublepigeon.github.io/Acuto/%e4%bd%8e%e6%88%90%e6%9c%acclaude-api%e4%bb%8e%e5%93%aa%e6%9d%a5%ef%bc%9f%e7%ae%97%e9%93%be%e3%80%81openrouter%e3%80%81dmxapi%e7%b1%bb%e4%b8%ad%e8%bd%ac%e7%ab%99%e6%a8%aa%e8%af%84/#webpage","url":"https://doublepigeon.github.io/Acuto/%e4%bd%8e%e6%88%90%e6%9c%acclaude-api%e4%bb%8e%e5%93%aa%e6%9d%a5%ef%bc%9f%e7%ae%97%e9%93%be%e3%80%81openrouter%e3%80%81dmxapi%e7%b1%bb%e4%b8%ad%e8%bd%ac%e7%ab%99%e6%a8%aa%e8%af%84/","name":"低成本Claude API从哪来？算链、OpenRouter、DMXAPI类中转站横评 | ACU-TO","isPartOf":{"@id":"https://doublepigeon.github.io/Acuto/#website"},"inLanguage":"zh-CN","about":{"@id":"https://doublepigeon.github.io/Acuto/#organization"},"description":"一、先厘清口径：倍率怎么算，“便宜”省在哪 搜“低成本Claude API”的人常会撞见两套价格体系：一边是按官方美元…","datePublished":"2026-10-21T13:37:47+00:00","dateModified":"2026-10-21T13:37:47+00:00"},{"@type":"BreadcrumbList","@id":"https://doublepigeon.github.io/Acuto/%e4%bd%8e%e6%88%90%e6%9c%acclaude-api%e4%bb%8e%e5%93%aa%e6%9d%a5%ef%bc%9f%e7%ae%97%e9%93%be%e3%80%81openrouter%e3%80%81dmxapi%e7%b1%bb%e4%b8%ad%e8%bd%ac%e7%ab%99%e6%a8%aa%e8%af%84/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://doublepigeon.github.io/Acuto/"},{"@type":"ListItem","position":2,"name":"低成本Claude API从哪来？算链、OpenRouter、DMXAPI类中转站横评"}]},{"@type":"Article","@id":"https://doublepigeon.github.io/Acuto/%e4%bd%8e%e6%88%90%e6%9c%acclaude-api%e4%bb%8e%e5%93%aa%e6%9d%a5%ef%bc%9f%e7%ae%97%e9%93%be%e3%80%81openrouter%e3%80%81dmxapi%e7%b1%bb%e4%b8%ad%e8%bd%ac%e7%ab%99%e6%a8%aa%e8%af%84/#article","headline":"低成本Claude API从哪来？算链、OpenRouter、DMXAPI类中转站横评","datePublished":"2026-10-21T13:37:47+00:00","dateModified":"2026-10-21T13:37:47+00:00","mainEntityOfPage":{"@id":"https://doublepigeon.github.io/Acuto/%e4%bd%8e%e6%88%90%e6%9c%acclaude-api%e4%bb%8e%e5%93%aa%e6%9d%a5%ef%bc%9f%e7%ae%97%e9%93%be%e3%80%81openrouter%e3%80%81dmxapi%e7%b1%bb%e4%b8%ad%e8%bd%ac%e7%ab%99%e6%a8%aa%e8%af%84/#webpage"},"isPartOf":{"@id":"https://doublepigeon.github.io/Acuto/#website"},"inLanguage":"zh-CN","publisher":{"@id":"https://doublepigeon.github.io/Acuto/#organization"},"isAccessibleForFree":true,"author":{"@type":"Person","@id":"https://doublepigeon.github.io/Acuto/author/doublepigeon/#person","name":"Hato","url":"https://doublepigeon.github.io/Acuto/author/doublepigeon/","image":"https://secure.gravatar.com/avatar/33e54dec0cd79fc4b5e911c15f836c46ec8d0e452ecd3ca5f707bce0a3540a3b?s=256&d=mm&r=g"},"wordCount":1948,"timeRequired":"PT6M","description":"一、先厘清口径：倍率怎么算，“便宜”省在哪 搜“低成本Claude API”的人常会撞见两套价格体系：一边是按官方美元…","articleSection":"Uncategorized","image":{"@type":"ImageObject","url":"https://doublepigeon.github.io/Acuto/wp-content/themes/acu-to/assets/img/og-default.png","width":1200,"height":630}}]}</script>
+</head>
+<body class="wp-singular post-template-default single single-post postid-79 single-format-standard wp-embed-responsive wp-theme-acu-to acuto-static acuto-singular acuto-no-cover">
+
+<a class="acuto-skip" href="#acuto-main">跳到主要内容</a>
+
+<header class="acuto-header" data-acuto-header>
+	<div class="acuto-utility">
+		<div class="acuto-container acuto-utility__inner">
+			<span class="acuto-utility__date">2026年10月21日</span>
+			<span class="acuto-utility__tagline">独立观察，深度分析</span>
+			<div class="acuto-utility__actions">
+				<button class="acuto-icon-btn" type="button" data-acuto-search-toggle aria-label="打开搜索" aria-haspopup="dialog">
+					<svg class="acuto-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg>
+					<span class="acuto-icon-btn__label">搜索</span>
+				</button>
+				<button class="acuto-icon-btn acuto-theme-toggle" type="button" data-acuto-theme-toggle aria-label="切换到深色模式" aria-pressed="false">
+					<svg class="acuto-icon acuto-icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/></svg>
+					<svg class="acuto-icon acuto-icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 14.2A8.5 8.5 0 0 1 9.8 3.6a8.6 8.6 0 1 0 10.6 10.6Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="acuto-masthead">
+		<div class="acuto-container acuto-masthead__inner">
+			<a class="acuto-brand" href="https://doublepigeon.github.io/Acuto/" rel="home" aria-label="ACU-TO 首页">
+									<span class="acuto-brand__name">ACU-TO</span>
+					<span class="acuto-brand__tagline">独立观察，深度分析</span>
+							</a>
+
+			<button class="acuto-menu-toggle" type="button" data-acuto-menu-toggle aria-expanded="false" aria-controls="acuto-primary-nav" aria-label="打开菜单">
+				<span></span><span></span><span></span>
+			</button>
+		</div>
+	</div>
+
+	<nav class="acuto-nav" id="acuto-primary-nav" data-acuto-nav aria-label="主导航">
+		<div class="acuto-container acuto-nav__inner">
+			<ul id="menu-acu-to-%e4%b8%bb%e5%af%bc%e8%88%aa-5" class="acuto-nav__list"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32"><a href="https://doublepigeon.github.io/Acuto/topic/news/">要闻</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33"><a href="https://doublepigeon.github.io/Acuto/topic/new-products/">新品</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34"><a href="https://doublepigeon.github.io/Acuto/topic/reviews/">评测</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-35"><a href="https://doublepigeon.github.io/Acuto/topic/comparisons/">横评</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36"><a href="https://doublepigeon.github.io/Acuto/topic/guides/">经验</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-37"><a href="https://doublepigeon.github.io/Acuto/topic/opinion/">观点</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="https://doublepigeon.github.io/Acuto/about/">关于我们</a></li>
+</ul>			<a class="acuto-nav__feed" href="https://doublepigeon.github.io/Acuto/feed.xml" aria-label="RSS 订阅">
+				<svg class="acuto-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="6.2" cy="17.8" r="1.8" fill="currentColor"/><path d="M4.4 10.8a8.8 8.8 0 0 1 8.8 8.8M4.4 4.2a15.4 15.4 0 0 1 15.4 15.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+				<span>RSS</span>
+			</a>
+		</div>
+	</nav>
+</header>
+
+<div class="acuto-search" data-acuto-search hidden>
+	<div class="acuto-search__backdrop" data-acuto-search-close></div>
+	<div class="acuto-search__panel" role="dialog" aria-modal="true" aria-labelledby="acuto-search-title">
+		<div class="acuto-search__head">
+			<div>
+				<span class="acuto-eyebrow">搜索</span>
+				<h2 id="acuto-search-title">ACU-TO</h2>
+			</div>
+			<button class="acuto-search__close" type="button" data-acuto-search-close aria-label="关闭搜索">
+				<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 5 14 14M19 5 5 19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg>
+			</button>
+		</div>
+
+		<label class="screen-reader-text" for="acuto-search-input">搜索关键词</label>
+		<input id="acuto-search-input" class="acuto-search__input" type="search" data-acuto-search-input placeholder="搜索文章、评测、经验…" autocomplete="off" />
+		<p class="acuto-search__hint" data-acuto-search-hint>输入关键词开始搜索</p>
+		<div class="acuto-search__results" data-acuto-search-results></div>
+		<p class="acuto-search__foot">Esc 关闭 · Ctrl/⌘ K 打开</p>
+	</div>
+</div>
+
+<main id="acuto-main" class="acuto-main">
+	<div class="acuto-progress" data-acuto-progress aria-hidden="true"><span></span></div>
+
+	<article class="acuto-single acuto-single--text post-79 post type-post status-publish format-standard hentry category-uncategorized">
+		<header class="acuto-single__head">
+			<div class="acuto-container acuto-single__head-inner">
+				<nav class="acuto-breadcrumbs" aria-label="面包屑"><ol><li><a href="https://doublepigeon.github.io/Acuto/">首页</a><span class="acuto-breadcrumbs__sep" aria-hidden="true">/</span></li><li><span aria-current="page">低成本Claude API从哪来？算链、OpenRouter、DMXAPI类中转站横评</span></li></ol></nav>
+				<div class="acuto-single__kicker">
+									</div>
+
+				<h1 class="acuto-single__title">低成本Claude API从哪来？算链、OpenRouter、DMXAPI类中转站横评</h1>
+
+				
+				<div class="acuto-single__byline">
+					<div class="acuto-meta"><time class="acuto-meta__date" datetime="2026-10-21T13:37:47+00:00">2026年10月21日</time><span class="acuto-meta__sep" aria-hidden="true">·</span><a class="acuto-meta__author" href="https://doublepigeon.github.io/Acuto/author/doublepigeon/">Hato</a><span class="acuto-meta__sep" aria-hidden="true">·</span><span class="acuto-meta__reading">6 分钟阅读</span></div>					<div class="acuto-share acuto-share--top" data-acuto-share>
+	<span class="acuto-share__label">分享</span>
+
+						<button class="acuto-share__item acuto-share__item--copy" type="button" data-acuto-copy-link data-label="复制链接" aria-label="复制链接">
+				<svg class="acuto-share__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 9h10v10H9zM5 15V5h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+				<span class="acuto-share__text">链接</span>
+			</button>
+								<a class="acuto-share__item acuto-share__item--weibo" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2F%25e4%25bd%258e%25e6%2588%2590%25e6%259c%25acclaude-api%25e4%25bb%258e%25e5%2593%25aa%25e6%259d%25a5%25ef%25bc%259f%25e7%25ae%2597%25e9%2593%25be%25e3%2580%2581openrouter%25e3%2580%2581dmxapi%25e7%25b1%25bb%25e4%25b8%25ad%25e8%25bd%25ac%25e7%25ab%2599%25e6%25a8%25aa%25e8%25af%2584%2F&#038;title=%E4%BD%8E%E6%88%90%E6%9C%ACClaude%20API%E4%BB%8E%E5%93%AA%E6%9D%A5%EF%BC%9F%E7%AE%97%E9%93%BE%E3%80%81OpenRouter%E3%80%81DMXAPI%E7%B1%BB%E4%B8%AD%E8%BD%AC%E7%AB%99%E6%A8%AA%E8%AF%84" target="_blank" rel="noopener noreferrer" aria-label="分享到微博">
+				<span class="acuto-share__text">微博</span>
+			</a>
+								<a class="acuto-share__item acuto-share__item--x" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2F%25e4%25bd%258e%25e6%2588%2590%25e6%259c%25acclaude-api%25e4%25bb%258e%25e5%2593%25aa%25e6%259d%25a5%25ef%25bc%259f%25e7%25ae%2597%25e9%2593%25be%25e3%2580%2581openrouter%25e3%2580%2581dmxapi%25e7%25b1%25bb%25e4%25b8%25ad%25e8%25bd%25ac%25e7%25ab%2599%25e6%25a8%25aa%25e8%25af%2584%2F&#038;text=%E4%BD%8E%E6%88%90%E6%9C%ACClaude%20API%E4%BB%8E%E5%93%AA%E6%9D%A5%EF%BC%9F%E7%AE%97%E9%93%BE%E3%80%81OpenRouter%E3%80%81DMXAPI%E7%B1%BB%E4%B8%AD%E8%BD%AC%E7%AB%99%E6%A8%AA%E8%AF%84" target="_blank" rel="noopener noreferrer" aria-label="分享到 X">
+				<span class="acuto-share__text">X</span>
+			</a>
+								<a class="acuto-share__item acuto-share__item--linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2F%25e4%25bd%258e%25e6%2588%2590%25e6%259c%25acclaude-api%25e4%25bb%258e%25e5%2593%25aa%25e6%259d%25a5%25ef%25bc%259f%25e7%25ae%2597%25e9%2593%25be%25e3%2580%2581openrouter%25e3%2580%2581dmxapi%25e7%25b1%25bb%25e4%25b8%25ad%25e8%25bd%25ac%25e7%25ab%2599%25e6%25a8%25aa%25e8%25af%2584%2F" target="_blank" rel="noopener noreferrer" aria-label="分享到 LinkedIn">
+				<span class="acuto-share__text">in</span>
+			</a>
+			</div>
+				</div>
+			</div>
+		</header>
+
+		
+		<div class="acuto-container acuto-single__layout">
+			<aside class="acuto-single__rail" aria-label="分享">
+				<div class="acuto-share acuto-share--rail" data-acuto-share>
+	<span class="acuto-share__label">分享</span>
+
+						<button class="acuto-share__item acuto-share__item--copy" type="button" data-acuto-copy-link data-label="复制链接" aria-label="复制链接">
+				<svg class="acuto-share__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 9h10v10H9zM5 15V5h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+				<span class="acuto-share__text">链接</span>
+			</button>
+								<a class="acuto-share__item acuto-share__item--weibo" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2F%25e4%25bd%258e%25e6%2588%2590%25e6%259c%25acclaude-api%25e4%25bb%258e%25e5%2593%25aa%25e6%259d%25a5%25ef%25bc%259f%25e7%25ae%2597%25e9%2593%25be%25e3%2580%2581openrouter%25e3%2580%2581dmxapi%25e7%25b1%25bb%25e4%25b8%25ad%25e8%25bd%25ac%25e7%25ab%2599%25e6%25a8%25aa%25e8%25af%2584%2F&#038;title=%E4%BD%8E%E6%88%90%E6%9C%ACClaude%20API%E4%BB%8E%E5%93%AA%E6%9D%A5%EF%BC%9F%E7%AE%97%E9%93%BE%E3%80%81OpenRouter%E3%80%81DMXAPI%E7%B1%BB%E4%B8%AD%E8%BD%AC%E7%AB%99%E6%A8%AA%E8%AF%84" target="_blank" rel="noopener noreferrer" aria-label="分享到微博">
+				<span class="acuto-share__text">微博</span>
+			</a>
+								<a class="acuto-share__item acuto-share__item--x" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2F%25e4%25bd%258e%25e6%2588%2590%25e6%259c%25acclaude-api%25e4%25bb%258e%25e5%2593%25aa%25e6%259d%25a5%25ef%25bc%259f%25e7%25ae%2597%25e9%2593%25be%25e3%2580%2581openrouter%25e3%2580%2581dmxapi%25e7%25b1%25bb%25e4%25b8%25ad%25e8%25bd%25ac%25e7%25ab%2599%25e6%25a8%25aa%25e8%25af%2584%2F&#038;text=%E4%BD%8E%E6%88%90%E6%9C%ACClaude%20API%E4%BB%8E%E5%93%AA%E6%9D%A5%EF%BC%9F%E7%AE%97%E9%93%BE%E3%80%81OpenRouter%E3%80%81DMXAPI%E7%B1%BB%E4%B8%AD%E8%BD%AC%E7%AB%99%E6%A8%AA%E8%AF%84" target="_blank" rel="noopener noreferrer" aria-label="分享到 X">
+				<span class="acuto-share__text">X</span>
+			</a>
+								<a class="acuto-share__item acuto-share__item--linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2F%25e4%25bd%258e%25e6%2588%2590%25e6%259c%25acclaude-api%25e4%25bb%258e%25e5%2593%25aa%25e6%259d%25a5%25ef%25bc%259f%25e7%25ae%2597%25e9%2593%25be%25e3%2580%2581openrouter%25e3%2580%2581dmxapi%25e7%25b1%25bb%25e4%25b8%25ad%25e8%25bd%25ac%25e7%25ab%2599%25e6%25a8%25aa%25e8%25af%2584%2F" target="_blank" rel="noopener noreferrer" aria-label="分享到 LinkedIn">
+				<span class="acuto-share__text">in</span>
+			</a>
+			</div>
+			</aside>
+
+			<div class="acuto-single__body">
+				<nav class="acuto-toc" data-acuto-toc hidden aria-label="本文目录">
+	<div class="acuto-toc__head">
+		<span class="acuto-eyebrow">本文目录</span>
+		<button class="acuto-toc__toggle" type="button" data-acuto-toc-toggle aria-expanded="true">收起</button>
+	</div>
+	<ol class="acuto-toc__list" data-acuto-toc-list></ol>
+</nav>
+
+				<div class="acuto-prose" data-acuto-prose>
+					
+<p class="wp-block-paragraph"><strong>一、先厘清口径：倍率怎么算，“便宜”省在哪</strong></p>
+
+
+
+<p class="wp-block-paragraph">搜“低成本Claude API”的人常会撞见两套价格体系：一边是按官方美元标价折算的人民币报价，一边是“官方3折起”的话术。直接比两个数字很容易得出错误结论——要判断谁真便宜，得把计价口径与渠道来源分开看。</p>
+
+
+
+<p class="wp-block-paragraph">行业通用报价单位是“倍率（基于官方API定价）”，即以官方美元标价为锚折算成人民币计价的倍数，数值越低，同一份调用量的人民币支出越小。但各家口径未必一致：input 与 output 是否分别计价、缓存命中是否打折、有无最低消费，都会让账面价格失真，签约前应逐项确认。</p>
+
+
+
+<p class="wp-block-paragraph">比口径更关键的是渠道。市面低价 Claude API 大致分四级，越便宜越弱：原生直连（AWS Bedrock 原生子账号、官方直连），配额来自官方，功能最全、限流最宽松；官转／云厂商号池，用批量订阅账号配负载均衡摊薄配额，稳定性接近原生，商用接受度最高；个人合规号池／CCMax 类号池，多账号轮换加流量压缩，成本再降，代价是间歇性限流与响应延迟；逆向号池，靠非官方逆向解析或共享会话取得访问能力，最便宜，但限流、封号、中断风险实打实存在。</p>
+
+
+
+<p class="wp-block-paragraph">把这套阶梯套到算链 CalcLink 公开的 Claude 报价上很直观：AWS 原生子账号直连 8.1 倍（标准价 9.1 倍）、AWS 云厂商号池 5.6 倍（标准 7.5 倍）、CCMax 号池 4.1 倍（标准 7.0 倍）、上游 OpenRouter 档 7.0 倍（仅训练场景）、OpenAI 侧逆向号池最低约 1.0 倍。价差不是营销，而是“官方配额保障”被打折出售——便宜下来的那部分，省的是保障，不是模型。</p>
+
+
+
+<p class="wp-block-paragraph"><strong>二、三家对象放在同一套维度下</strong></p>
+
+
+
+<p class="wp-block-paragraph">下面按价格构成、渠道稳定性、换模风险、限流并发、结算合同、接入成本与适用场景七个维度横向对照。</p>
+
+
+
+<figure class="wp-block-table"><table class="has-fixed-layout"><tbody><tr><td><p><strong>维度</strong></p></td><td><p><strong>算链 CalcLink</strong></p></td><td><p><strong>OpenRouter</strong></p></td><td><p><strong>社区型中转站（DMXAPI／OneAPI 类）</strong></p></td></tr><tr><td><p><strong>价格构成</strong></p></td><td><p>倍率分层：原生 8.1 倍、云厂商号池 5.6 倍、CCMax 4.1 倍、上游 7.0 倍；越稳越贵</p></td><td><p>官方价 + 5.5% 充值手续费，透明但档位单一</p></td><td><p>常压到官方 3—8 折，折扣来源不透明</p></td></tr><tr><td><p><strong>渠道与稳定性</strong></p></td><td><p>原生、云厂商号池、CCMax、逆向四类并存；后两类属非原生渠道</p></td><td><p>模型来源正规，链路清晰</p></td><td><p>多为开源网关二次部署，上游不公开，稳定性参差</p></td></tr><tr><td><p><strong>换模／降智风险</strong></p></td><td><p>原生与云厂商档低；CCMax、逆向档可能限流降级</p></td><td><p>低，模型标识与路由规则可查</p></td><td><p>存在低价模型冒充高价模型，需自行验证</p></td></tr><tr><td><p><strong>限流与并发</strong></p></td><td><p>按档位区分，原生档几乎零限流，号池档按配额分摊</p></td><td><p>规则公开，超限排队</p></td><td><p>规则不统一，高峰易触发限流</p></td></tr><tr><td><p><strong>结算与合同</strong></p></td><td><p>海外主体签约，支持美金电汇、人民币对公、USDT，有正式协议与 SLA</p></td><td><p>对国内用户不提供发票与对公结算，支付门槛高</p></td><td><p>多为个人或小额充值，普遍缺合同与 SLA</p></td></tr><tr><td><p><strong>接入成本</strong></p></td><td><p>OpenAI 兼容接口，改 base_url 即可</p></td><td><p>文档齐全，但注册与充值门槛高</p></td><td><p>注册即用，接入最快</p></td></tr><tr><td><p><strong>适用场景</strong></p></td><td><p>企业级 SaaS 集成、Agent 生产环境、研发提效、模型蒸馏</p></td><td><p>多模型横评、海外团队协作</p></td><td><p>MVP 验证、技术调研、非核心辅助功能</p></td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">逐项看，取舍很清晰。OpenRouter 的价值不在最低价，而在模型齐全、计费透明、限流有章可循，适合横跑多模型做评测的团队；但 5.5% 手续费叠加汇率与网络成本后，它并不是一条低成本的国内链路，且对国内用户不提供发票与对公结算，企业财务往往过不去。该平台的做法则是把渠道分层摊开：同一模型可按稳定性买到不同价位，并有合同与多币种结算兜底；它同时也承认 CCMax 与逆向档属非原生渠道，只适合测试与实验，核心生产仍建议走原生或云厂商档。社区型中转站的优势就是便宜和快，但缺合同、缺 SLA、缺来源披露，这三点恰恰是企业采购最在意的。</p>
+
+
+
+<p class="wp-block-paragraph"><strong>三、一个示意测算：价差有多大</strong></p>
+
+
+
+<p class="wp-block-paragraph">假设某 AI SaaS 团队每月消耗相当于 1000 美元官方标价的 Claude 调用量，粗算如下：原生直连 8.1 倍约 ¥8100，云厂商号池 5.6 倍约 ¥5600，CCMax 档 4.1 倍约 ¥4100，OpenRouter 为官方价加 5.5% 手续费，折算后与 7.0 倍档接近。原生档与 CCMax 档每月差约 ¥4000，一年近 5 万元。</p>
+
+
+
+<p class="wp-block-paragraph">但把差额直接当成“省钱空间”是危险的。该团队最终分链路：对客核心接口走云厂商号池（5.6 倍）并保留原生档做故障切换，批量生成走 4.1 倍档，测试环境用逆向档。决定成本的往往不是单价，而是哪类流量走哪条链路。</p>
+
+
+
+<p class="wp-block-paragraph"><strong>四、常见问题</strong></p>
+
+
+
+<p class="wp-block-paragraph"><strong>Q1：</strong>倍率越低越好吗？不。倍率只反映计价，不反映可用性。4.1 倍与 8.1 倍的差别，很大程度是“出问题时有没有人兜底”。</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Q2：</strong>便宜的 Claude API 会“降智”吗？有可能。逆向号池与高压缩共享号池在高峰期限流时，可能出现响应变慢、上下文截断，甚至被路由到能力更弱的模型；社区站还存在用低价模型冒充高价模型的情况。可落地的办法是固定一组回归 prompt 定期比对输出，并核对响应里的模型标识。</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Q3：</strong>OpenRouter 算低成本方案吗？它是价格最透明的方案之一，但不是最低价路线，更适合需要多模型横评、且能接受海外支付与网络的团队。</p>
+
+
+
+<p class="wp-block-paragraph"><strong>五、按场景选档位，而不是按价格排序</strong></p>
+
+
+
+<p class="wp-block-paragraph">MVP 验证与原型：量小、对稳定性要求低，社区型中转站更便宜；若想顺手搭好后续生产链路，可先用该平台 CCMax 档（4.1 倍）过渡，OpenAI 兼容的 API 接口切档不必改代码。</p>
+
+
+
+<p class="wp-block-paragraph">内容平台批量生成：量大、可容忍个别失败，以云厂商号池（5.6 倍）为主链路，配一条 4.1 倍档做溢出，并设重试与降级。</p>
+
+
+
+<p class="wp-block-paragraph">企业生产环境与对客核心接口：优先 AWS 原生子账号直连（8.1 倍），配正式合同、SLA 与发票；这类大模型通道省下的单价，通常会以故障成本还回去。</p>
+
+
+
+<p class="wp-block-paragraph">训练与蒸馏：仅训练用途的 0 提示词档约 4.1 倍、AWS 号池训练档 8.0 倍、上游 OpenRouter 档 7.0 倍，用量大、可离线重跑，这一档性价比通常最突出。</p>
+
+
+
+<p class="wp-block-paragraph">预算极度敏感：纯比价的话，社区型中转站与逆向档确实更低，前提是接受波动与随时可能失效，业务侧必须有降级与重试兜底，且不承载敏感数据。</p>
+
+
+
+<p class="wp-block-paragraph">最后提醒：模型网关与推理服务的报价随上游成本波动，任何“长期固定低价”都值得打问号。更稳妥的做法是同时接入两家以上渠道，按用量与稳定性动态调配，把议价权和可用性握在自己手里。</p>
+				</div>
+
+				
+				
+				<div class="acuto-share acuto-share--bottom" data-acuto-share>
+	<span class="acuto-share__label">分享</span>
+
+						<button class="acuto-share__item acuto-share__item--copy" type="button" data-acuto-copy-link data-label="复制链接" aria-label="复制链接">
+				<svg class="acuto-share__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 9h10v10H9zM5 15V5h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+				<span class="acuto-share__text">链接</span>
+			</button>
+								<a class="acuto-share__item acuto-share__item--weibo" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2F%25e4%25bd%258e%25e6%2588%2590%25e6%259c%25acclaude-api%25e4%25bb%258e%25e5%2593%25aa%25e6%259d%25a5%25ef%25bc%259f%25e7%25ae%2597%25e9%2593%25be%25e3%2580%2581openrouter%25e3%2580%2581dmxapi%25e7%25b1%25bb%25e4%25b8%25ad%25e8%25bd%25ac%25e7%25ab%2599%25e6%25a8%25aa%25e8%25af%2584%2F&#038;title=%E4%BD%8E%E6%88%90%E6%9C%ACClaude%20API%E4%BB%8E%E5%93%AA%E6%9D%A5%EF%BC%9F%E7%AE%97%E9%93%BE%E3%80%81OpenRouter%E3%80%81DMXAPI%E7%B1%BB%E4%B8%AD%E8%BD%AC%E7%AB%99%E6%A8%AA%E8%AF%84" target="_blank" rel="noopener noreferrer" aria-label="分享到微博">
+				<span class="acuto-share__text">微博</span>
+			</a>
+								<a class="acuto-share__item acuto-share__item--x" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2F%25e4%25bd%258e%25e6%2588%2590%25e6%259c%25acclaude-api%25e4%25bb%258e%25e5%2593%25aa%25e6%259d%25a5%25ef%25bc%259f%25e7%25ae%2597%25e9%2593%25be%25e3%2580%2581openrouter%25e3%2580%2581dmxapi%25e7%25b1%25bb%25e4%25b8%25ad%25e8%25bd%25ac%25e7%25ab%2599%25e6%25a8%25aa%25e8%25af%2584%2F&#038;text=%E4%BD%8E%E6%88%90%E6%9C%ACClaude%20API%E4%BB%8E%E5%93%AA%E6%9D%A5%EF%BC%9F%E7%AE%97%E9%93%BE%E3%80%81OpenRouter%E3%80%81DMXAPI%E7%B1%BB%E4%B8%AD%E8%BD%AC%E7%AB%99%E6%A8%AA%E8%AF%84" target="_blank" rel="noopener noreferrer" aria-label="分享到 X">
+				<span class="acuto-share__text">X</span>
+			</a>
+								<a class="acuto-share__item acuto-share__item--linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdoublepigeon.github.io%2FAcuto%2F%25e4%25bd%258e%25e6%2588%2590%25e6%259c%25acclaude-api%25e4%25bb%258e%25e5%2593%25aa%25e6%259d%25a5%25ef%25bc%259f%25e7%25ae%2597%25e9%2593%25be%25e3%2580%2581openrouter%25e3%2580%2581dmxapi%25e7%25b1%25bb%25e4%25b8%25ad%25e8%25bd%25ac%25e7%25ab%2599%25e6%25a8%25aa%25e8%25af%2584%2F" target="_blank" rel="noopener noreferrer" aria-label="分享到 LinkedIn">
+				<span class="acuto-share__text">in</span>
+			</a>
+			</div>
+							</div>
+		</div>
+
+					<section class="acuto-related" aria-labelledby="acuto-related-title">
+	<div class="acuto-container">
+		<div class="acuto-related__head">
+			<div>
+				<span class="acuto-eyebrow">继续阅读</span>
+				<h2 id="acuto-related-title">相关阅读</h2>
+			</div>
+					</div>
+
+		<div class="acuto-grid acuto-grid--2 acuto-grid--mosaic">
+			<article class="acuto-card acuto-card--grid acuto-card--no-cover post-76 post type-post status-publish format-standard hentry category-reviews">
+			<span class="acuto-card__number" aria-hidden="true">01</span>
+	
+	<div class="acuto-card__body">
+		<a class="acuto-eyebrow" href="https://doublepigeon.github.io/Acuto/topic/reviews/">评测</a>
+								<h3 class="acuto-card__title">				<a href="https://doublepigeon.github.io/Acuto/minimax-h3-%e5%a4%9a%e6%a8%a1%e6%80%81%e8%a7%86%e9%a2%91%e7%94%9f%e6%88%90%e5%a4%a7%e6%a8%a1%e5%9e%8b%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%e6%8a%a5%e5%91%8a/">MiniMax H3 多模态视频生成大模型深度评测报告</a>
+			</h3>
+							<p class="acuto-card__excerpt">音画原生一体化·开源权重与企业级全模态生成架构解析 一、执行摘要（Executive Summary） 2026年8月，通用人工智能创新企业 MiniMax（稀宇科技 / 海螺AI）正式发布了全新一代开源权重（…</p>
+			
+			<div class="acuto-meta"><time class="acuto-meta__date" datetime="2026-10-21T13:35:59+00:00">2026年10月21日</time><span class="acuto-meta__sep" aria-hidden="true">·</span><span class="acuto-meta__reading">7 分钟阅读</span></div>			</div>
+</article>
+<article class="acuto-card acuto-card--grid acuto-card--no-cover post-73 post type-post status-publish format-standard hentry category-reviews">
+			<span class="acuto-card__number" aria-hidden="true">02</span>
+	
+	<div class="acuto-card__body">
+		<a class="acuto-eyebrow" href="https://doublepigeon.github.io/Acuto/topic/reviews/">评测</a>
+								<h3 class="acuto-card__title">				<a href="https://doublepigeon.github.io/Acuto/gpt-6-astra-%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%ef%bc%9aopenai-%e6%97%97%e8%88%b0%e6%a8%a1%e5%9e%8b%e8%83%bd%e5%90%a6%e7%9c%9f%e6%ad%a3%e6%93%8d%e4%bd%9c%e7%94%b5%e8%84%91%ef%bc%9f/">GPT-6 Astra 深度评测：OpenAI 旗舰模型能否真正“操作电脑”？</a>
+			</h3>
+							<p class="acuto-card__excerpt">2026 年 9 月，OpenAI 再次把前沿模型的发布节奏推到了行业视野中心。这一次登场的旗舰是 GPT-6 Astra——一个被官方明确定位为“复杂端到端工作”的前沿模型，覆盖推理、研究、编码、电脑操作（c…</p>
+			
+			<div class="acuto-meta"><time class="acuto-meta__date" datetime="2026-10-21T09:31:05+00:00">2026年10月21日</time><span class="acuto-meta__sep" aria-hidden="true">·</span><span class="acuto-meta__reading">11 分钟阅读</span></div>			</div>
+</article>
+<article class="acuto-card acuto-card--grid acuto-card--no-cover post-62 post type-post status-publish format-standard hentry category-opinion">
+			<span class="acuto-card__number" aria-hidden="true">03</span>
+	
+	<div class="acuto-card__body">
+		<a class="acuto-eyebrow" href="https://doublepigeon.github.io/Acuto/topic/opinion/">观点</a>
+								<h3 class="acuto-card__title">				<a href="https://doublepigeon.github.io/Acuto/%e5%a6%82%e4%bd%95%e8%ae%a9ai%e6%8e%a8%e8%8d%90%e6%88%91%e7%9a%84%e4%ba%a7%e5%93%81/">如何让AI推荐我的产品</a>
+			</h3>
+							<p class="acuto-card__excerpt">把AI的「推荐位」拆成三步：被检索到、被正确理解、被优先选择 一、场景：客户在AI里问了一句，名单上没有你 一个很典型的画面：潜在客户想找一家供应商，不再去搜索引擎翻十页链接，而是在对话框里打一行字——「做XX…</p>
+			
+			<div class="acuto-meta"><time class="acuto-meta__date" datetime="2026-10-21T05:15:22+00:00">2026年10月21日</time><span class="acuto-meta__sep" aria-hidden="true">·</span><span class="acuto-meta__reading">5 分钟阅读</span></div>			</div>
+</article>
+		</div>
+	</div>
+</section>
+		
+		<nav class="acuto-prevnext" aria-label="文章导航"><a class="acuto-prevnext__item acuto-prevnext__item--prev" href="https://doublepigeon.github.io/Acuto/minimax-h3-%e5%a4%9a%e6%a8%a1%e6%80%81%e8%a7%86%e9%a2%91%e7%94%9f%e6%88%90%e5%a4%a7%e6%a8%a1%e5%9e%8b%e6%b7%b1%e5%ba%a6%e8%af%84%e6%b5%8b%e6%8a%a5%e5%91%8a/"><span class="acuto-eyebrow">上一篇</span><strong>MiniMax H3 多模态视频生成大模型深度评测报告</strong></a></nav>	</article>
+	</main>
+
+<footer class="acuto-footer">
+	<div class="acuto-container">
+		<div class="acuto-footer__top">
+			<div class="acuto-footer__brand">
+				<a class="acuto-footer__wordmark" href="https://doublepigeon.github.io/Acuto/" rel="home">ACU-TO</a>
+				<p class="acuto-footer__tagline">独立观察，深度分析</p>
+				<p class="acuto-footer__about">ACU-TO 关注正在发生的变化，也关心变化如何影响普通人的生活。我们做资讯、评测、横评与经验分享，尽量把复杂的事情讲清楚。</p>
+			</div>
+
+			<div class="acuto-footer__nav">
+				<h2 class="acuto-footer__title">栏目</h2>
+				<ul id="menu-acu-to-%e9%a1%b5%e8%84%9a-5" class="acuto-footer__list"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39"><a href="https://doublepigeon.github.io/Acuto/topic/news/">要闻</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40"><a href="https://doublepigeon.github.io/Acuto/topic/new-products/">新品</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41"><a href="https://doublepigeon.github.io/Acuto/topic/reviews/">评测</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-42"><a href="https://doublepigeon.github.io/Acuto/topic/comparisons/">横评</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-43"><a href="https://doublepigeon.github.io/Acuto/topic/guides/">经验</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-44"><a href="https://doublepigeon.github.io/Acuto/topic/opinion/">观点</a></li>
+</ul>			</div>
+
+			<div class="acuto-footer__nav">
+				<h2 class="acuto-footer__title">关于</h2>
+				<ul class="acuto-footer__list">
+																<li><a href="https://doublepigeon.github.io/Acuto/about/">关于我们</a></li>
+																<li><a href="https://doublepigeon.github.io/Acuto/contact/">联系我们</a></li>
+																<li><a href="https://doublepigeon.github.io/Acuto/privacy/">隐私政策</a></li>
+										<li><a href="https://doublepigeon.github.io/Acuto/feed.xml">RSS 订阅</a></li>
+				</ul>
+			</div>
+
+			<div class="acuto-footer__contact">
+				<h2 class="acuto-footer__title">联系与订阅</h2>
+
+									<a class="acuto-footer__email" href="mailto:doublepigeonChen@outlook.com">doublepigeonChen@outlook.com</a>
+				
+									<p class="acuto-footer__wechat">微信：doublepigeonBN</p>
+				
+				
+									<a class="acuto-button acuto-button--light" href="https://doublepigeon.github.io/Acuto/feed.xml">通过 RSS 订阅</a>
+							</div>
+		</div>
+
+		<div class="acuto-footer__bottom">
+			<p>
+				© 2026 ACU-TO							</p>
+
+							<ul id="menu-acu-to-%e6%b3%95%e5%be%8b%e6%9d%a1%e6%ac%be-5" class="acuto-footer__legal"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45"><a href="https://doublepigeon.github.io/Acuto/privacy/">隐私政策</a></li>
+</ul>			
+			<button class="acuto-top" type="button" data-acuto-top aria-label="返回顶部">
+				<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg>
+				<span>返回顶部</span>
+			</button>
+		</div>
+	</div>
+</footer>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/acu-to/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--teal: #0f766e;--wp--preset--color--teal-dark: #0b5d56;--wp--preset--color--teal-light: #ccfbf1;--wp--preset--color--ink: #0b1f1d;--wp--preset--color--muted: #5f7572;--wp--preset--color--soft: #f2faf8;--wp--preset--color--line: #d6e6e3;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: clamp(14px, 0.875rem + ((1vw - 3.2px) * 0.625), 20px);--wp--preset--font-size--large: clamp(22.041px, 1.378rem + ((1vw - 3.2px) * 1.454), 36px);--wp--preset--font-size--x-large: clamp(25.014px, 1.563rem + ((1vw - 3.2px) * 1.769), 42px);--wp--preset--font-size--normal: clamp(0.875rem, 0.875rem + ((1vw - 0.2rem) * 0.313), 1.063rem);--wp--preset--font-size--xx-large: clamp(1.976rem, 1.976rem + ((1vw - 0.2rem) * 2.54), 3.5rem);--wp--preset--font-size--display: clamp(2.629rem, 2.629rem + ((1vw - 0.2rem) * 3.952), 5rem);--wp--preset--font-family--display: "Source Han Serif SC", "Noto Serif SC", "Songti SC", SimSun, Georgia, serif;--wp--preset--font-family--sans: "Inter", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;--wp--preset--font-family--mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:root { --wp--style--global--content-size: 760px;--wp--style--global--wide-size: 1280px; }:where(body) { margin: 0; }.wp-site-blocks { padding-top: var(--wp--style--root--padding-top); padding-bottom: var(--wp--style--root--padding-bottom); }.has-global-padding { padding-right: var(--wp--style--root--padding-right); padding-left: var(--wp--style--root--padding-left); }.has-global-padding > .alignfull { margin-right: calc(var(--wp--style--root--padding-right) * -1); margin-left: calc(var(--wp--style--root--padding-left) * -1); }.has-global-padding :where(:not(.alignfull.is-layout-flow) > .has-global-padding:not(.wp-block-block, .alignfull)) { padding-right: 0; padding-left: 0; }.has-global-padding :where(:not(.alignfull.is-layout-flow) > .has-global-padding:not(.wp-block-block, .alignfull)) > .alignfull { margin-left: 0; margin-right: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: 24px; margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: 24px; }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-flex){gap: 24px;}:root :where(.is-layout-grid){gap: 24px;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{font-family: var(--wp--preset--font-family--sans);font-size: var(--wp--preset--font-size--normal);line-height: 1.7;--wp--style--root--padding-top: 0px;--wp--style--root--padding-right: 0px;--wp--style--root--padding-bottom: 0px;--wp--style--root--padding-left: 0px;}a:where(:not(.wp-element-button)){color: var(--acuto-teal);text-decoration: underline;}h1, h2, h3, h4, h5, h6{font-family: var(--wp--preset--font-family--display);font-weight: 800;line-height: 1.12;}:root :where(.wp-element-button, .wp-block-button__link){background-color: var(--acuto-teal);border-radius: 0;border-width: 0;color: #ffffff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: 700;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-teal-color{color: var(--wp--preset--color--teal) !important;}.has-teal-dark-color{color: var(--wp--preset--color--teal-dark) !important;}.has-teal-light-color{color: var(--wp--preset--color--teal-light) !important;}.has-ink-color{color: var(--wp--preset--color--ink) !important;}.has-muted-color{color: var(--wp--preset--color--muted) !important;}.has-soft-color{color: var(--wp--preset--color--soft) !important;}.has-line-color{color: var(--wp--preset--color--line) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-teal-background-color{background-color: var(--wp--preset--color--teal) !important;}.has-teal-dark-background-color{background-color: var(--wp--preset--color--teal-dark) !important;}.has-teal-light-background-color{background-color: var(--wp--preset--color--teal-light) !important;}.has-ink-background-color{background-color: var(--wp--preset--color--ink) !important;}.has-muted-background-color{background-color: var(--wp--preset--color--muted) !important;}.has-soft-background-color{background-color: var(--wp--preset--color--soft) !important;}.has-line-background-color{background-color: var(--wp--preset--color--line) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-teal-border-color{border-color: var(--wp--preset--color--teal) !important;}.has-teal-dark-border-color{border-color: var(--wp--preset--color--teal-dark) !important;}.has-teal-light-border-color{border-color: var(--wp--preset--color--teal-light) !important;}.has-ink-border-color{border-color: var(--wp--preset--color--ink) !important;}.has-muted-border-color{border-color: var(--wp--preset--color--muted) !important;}.has-soft-border-color{border-color: var(--wp--preset--color--soft) !important;}.has-line-border-color{border-color: var(--wp--preset--color--line) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-normal-font-size{font-size: var(--wp--preset--font-size--normal) !important;}.has-xx-large-font-size{font-size: var(--wp--preset--font-size--xx-large) !important;}.has-display-font-size{font-size: var(--wp--preset--font-size--display) !important;}.has-display-font-family{font-family: var(--wp--preset--font-family--display) !important;}.has-sans-font-family{font-family: var(--wp--preset--font-family--sans) !important;}.has-mono-font-family{font-family: var(--wp--preset--font-family--mono) !important;}
+</style>
+<script id="acuto-main-js-extra">
+var acutoData = {"homeUrl":"https://doublepigeon.github.io/Acuto/","restUrl":"https://doublepigeon.github.io/Acuto/wp-json/wp/v2/","searchIndexUrl":"https://doublepigeon.github.io/Acuto/search-index.json","feedUrl":"https://doublepigeon.github.io/Acuto/feed.xml","mode":"static","defaultMode":"light","i18n":{"searchPlaceholder":"\u641c\u7d22\u6587\u7ae0\u3001\u8bc4\u6d4b\u3001\u7ecf\u9a8c\u2026","searchHint":"\u8f93\u5165\u5173\u952e\u8bcd\u5f00\u59cb\u641c\u7d22","searchLoading":"\u6b63\u5728\u641c\u7d22\u2026","searchEmpty":"\u6ca1\u6709\u627e\u5230\u5339\u914d\u7684\u5185\u5bb9\u3002","searchError":"\u641c\u7d22\u6682\u65f6\u4e0d\u53ef\u7528\uff0c\u8bf7\u7a0d\u540e\u518d\u8bd5\u3002","copy":"\u590d\u5236\u94fe\u63a5","copied":"\u5df2\u590d\u5236","toc":"\u672c\u6587\u76ee\u5f55","backToTop":"\u8fd4\u56de\u9876\u90e8","menuOpen":"\u6253\u5f00\u83dc\u5355","menuClose":"\u5173\u95ed\u83dc\u5355","darkMode":"\u5207\u6362\u5230\u6df1\u8272\u6a21\u5f0f","lightMode":"\u5207\u6362\u5230\u6d45\u8272\u6a21\u5f0f"}};
+</script>
+<script data-wp-strategy="defer" defer id="acuto-main-js" src="https://doublepigeon.github.io/Acuto/wp-content/themes/acu-to/assets/js/main.js?ver=1792588841"></script>
+</body>
+</html>
