@@ -886,11 +886,15 @@ html[data-theme="dark"] .acuto-theme-toggle .acuto-icon--moon {
 }
 
 .acuto-hero__excerpt {
+	display: -webkit-box;
 	max-width: 62ch;
 	margin: 0 0 1.5rem;
+	overflow: hidden;
 	color: rgba(255, 255, 255, 0.86);
 	font-size: clamp(1.02rem, 1.5vw, 1.28rem);
 	line-height: 1.65;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
 }
 
 .acuto-hero__meta {
@@ -1453,10 +1457,26 @@ html[data-theme="dark"] .acuto-theme-toggle .acuto-icon--moon {
 
 .acuto-toc__list {
 	margin: 0.65rem 0 0;
-	padding: 0 0 0 1.1rem;
+	padding: 0;
 	color: var(--acuto-ink-soft);
 	font-size: 0.85rem;
 	line-height: 1.6;
+	list-style: none;
+}
+
+.acuto-toc__item {
+	position: relative;
+	padding-left: 1.1rem;
+}
+
+.acuto-toc__item::before {
+	position: absolute;
+	top: 0.72em;
+	left: 0;
+	width: 0.42rem;
+	height: 1px;
+	background: var(--acuto-line-strong);
+	content: "";
 }
 
 .acuto-toc__item + .acuto-toc__item {
@@ -1473,6 +1493,7 @@ html[data-theme="dark"] .acuto-theme-toggle .acuto-icon--moon {
 
 .acuto-toc__item--h3 {
 	margin-left: 0.8rem;
+	padding-left: 1.1rem;
 	font-size: 0.8rem;
 	color: var(--acuto-muted);
 }
