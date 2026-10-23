@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 	<url>
 		<loc>https://doublepigeon.github.io/Acuto/</loc>
-		<lastmod>2026-10-21T13:38:37+00:00</lastmod>
+		<lastmod>2026-10-23T01:37:19+00:00</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1.0</priority>
 	</url>
@@ -31,6 +31,12 @@
 		<priority>0.7</priority>
 	</url>
 	<url>
+		<loc>https://doublepigeon.github.io/Acuto/ai%e6%8a%8a%e4%bd%a0%e7%9a%84%e5%85%ac%e5%8f%b8%e8%af%b4%e9%94%99%e3%80%81%e8%af%b4%e6%97%a7%e4%ba%86%ef%bc%9a%e5%a4%a7%e6%a8%a1%e5%9e%8b%e4%bc%98%e5%8c%96%e6%9c%8d%e5%8a%a1%e6%80%8e%e4%b9%88%e6%8a%8a/</loc>
+		<lastmod>2026-10-23T01:37:02+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
 		<loc>https://doublepigeon.github.io/Acuto/%e4%bd%8e%e6%88%90%e6%9c%acclaude-api%e4%bb%8e%e5%93%aa%e6%9d%a5%ef%bc%9f%e7%ae%97%e9%93%be%e3%80%81openrouter%e3%80%81dmxapi%e7%b1%bb%e4%b8%ad%e8%bd%ac%e7%ab%99%e6%a8%aa%e8%af%84/</loc>
 		<lastmod>2026-10-21T13:37:47+00:00</lastmod>
 		<changefreq>weekly</changefreq>
@@ -56,25 +62,25 @@
 	</url>
 	<url>
 		<loc>https://doublepigeon.github.io/Acuto/topic/uncategorized/</loc>
-		<lastmod>2026-10-21T13:38:37+00:00</lastmod>
+		<lastmod>2026-10-23T01:37:19+00:00</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>https://doublepigeon.github.io/Acuto/topic/opinion/</loc>
-		<lastmod>2026-10-21T13:38:37+00:00</lastmod>
+		<lastmod>2026-10-23T01:37:19+00:00</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>https://doublepigeon.github.io/Acuto/topic/reviews/</loc>
-		<lastmod>2026-10-21T13:38:37+00:00</lastmod>
+		<lastmod>2026-10-23T01:37:19+00:00</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>https://doublepigeon.github.io/Acuto/author/doublepigeon/</loc>
-		<lastmod>2026-10-21T13:38:37+00:00</lastmod>
+		<lastmod>2026-10-23T01:37:19+00:00</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.5</priority>
 	</url>

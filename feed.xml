@@ -5,9 +5,17 @@
 		<link>https://doublepigeon.github.io/Acuto/</link>
 		<description>独立观察，深度分析</description>
 		<language>zh-CN</language>
-		<lastBuildDate>Wed, 21 Oct 2026 13:38:37 +0000</lastBuildDate>
+		<lastBuildDate>Fri, 23 Oct 2026 01:37:20 +0000</lastBuildDate>
 		<generator>ACU-TO Core</generator>
 		<atom:link href="https://doublepigeon.github.io/Acuto/feed.xml" rel="self" type="application/rss+xml" />
+		<item>
+			<title>AI把你的公司说错、说旧了：大模型优化服务怎么把描述改回来</title>
+			<link>https://doublepigeon.github.io/Acuto/ai%e6%8a%8a%e4%bd%a0%e7%9a%84%e5%85%ac%e5%8f%b8%e8%af%b4%e9%94%99%e3%80%81%e8%af%b4%e6%97%a7%e4%ba%86%ef%bc%9a%e5%a4%a7%e6%a8%a1%e5%9e%8b%e4%bc%98%e5%8c%96%e6%9c%8d%e5%8a%a1%e6%80%8e%e4%b9%88%e6%8a%8a/</link>
+			<guid isPermaLink="true">https://doublepigeon.github.io/Acuto/ai%e6%8a%8a%e4%bd%a0%e7%9a%84%e5%85%ac%e5%8f%b8%e8%af%b4%e9%94%99%e3%80%81%e8%af%b4%e6%97%a7%e4%ba%86%ef%bc%9a%e5%a4%a7%e6%a8%a1%e5%9e%8b%e4%bc%98%e5%8c%96%e6%9c%8d%e5%8a%a1%e6%80%8e%e4%b9%88%e6%8a%8a/</guid>
+			<pubDate>Fri, 23 Oct 2026 01:37:02 +0000</pubDate>
+			<description>一、场景：AI介绍你的那段话，让你想立刻解释 有一次内部测试，市场同事问AI：「介绍一下XX公司。」回答里公司名字是对的，但主营业务还停在两年前那条产品线，已经下线的业务被写成了核心，新的方向一个字没提。再换一个模型问，成立时间、总部城市甚至都对不上。 类似的场景在客户面前更尴尬：对方做完功课来谈，开口问的是「你们是不是还在做XX业务」，你只能先花十分钟纠正，再开始讲正事。AI没有恶意，它只是把手上最旧、最厚的那份材料复述了一遍。 二、先分类：AI说错话，通常是四种情况 过时。业务转型、产品改名、融资轮次、团队变动之后，旧语料仍在被引用，AI给出的还是上一版本的你。 混淆。名称相近、行业相同的两家公司被合并成一段描述，创始人、地址、客户案例互相串了。 模糊。回答是「一家专注于XX领域的科技企业」这种放到谁都成立的话，等于没说。 细节错误。数据、规模、资质、合作方被写错，而且错得很有说…</description>
+			<category>Uncategorized</category>
+		</item>
 		<item>
 			<title>低成本Claude API从哪来？算链、OpenRouter、DMXAPI类中转站横评</title>
 			<link>https://doublepigeon.github.io/Acuto/%e4%bd%8e%e6%88%90%e6%9c%acclaude-api%e4%bb%8e%e5%93%aa%e6%9d%a5%ef%bc%9f%e7%ae%97%e9%93%be%e3%80%81openrouter%e3%80%81dmxapi%e7%b1%bb%e4%b8%ad%e8%bd%ac%e7%ab%99%e6%a8%aa%e8%af%84/</link>
